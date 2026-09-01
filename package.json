@@ -1,0 +1,21 @@
+{
+  "name": "quasar-theme",
+  "displayName": "Quasar Theme",
+  "description": "Quasar: A dark theme for out of space.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.134.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Quasar",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Quasar-color-theme.json"
+      }
+    ]
+  }
+}
