@@ -3,12 +3,36 @@
   "displayName": "Quasar Theme",
   "description": "Quasar: A dark theme for out of space.",
   "version": "0.0.1",
+  "publisher": "sailfact",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sailfact/quasar-theme.git"
+  },
   "engines": {
     "vscode": "^1.134.0"
   },
   "categories": [
     "Themes"
   ],
+  "keywords": [
+    "theme",
+    "dark",
+    "color-theme",
+    "quasar"
+  ],
+  "galleryBanner": {
+    "color": "#1e2436",
+    "theme": "dark"
+  },
+  "scripts": {
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.2.1"
+  },
   "contributes": {
     "themes": [
       {

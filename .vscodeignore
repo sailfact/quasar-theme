@@ -1,4 +1,12 @@
 .vscode/**
 .vscode-test/**
+.github/**
 .gitignore
+.gitattributes
 vsc-extension-quickstart.md
+CLAUDE.md
+src/**
+scripts/**
+images/**
+!images/icon.png
+*.vsix
