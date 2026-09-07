@@ -9,6 +9,7 @@ const NOT_THEME_KEYS = [
   "editor.tokenColorCustomizations",
 ];
 
+// Minimal promise wrapper around https.get — fetches the reference page's raw HTML body.
 const get = (url) =>
   new Promise((resolve, reject) => {
     https.get(url, (res) => {
@@ -20,6 +21,9 @@ const get = (url) =>
     });
   });
 
+// The VS Code docs render every valid theme-color key inside a <code> tag, alongside
+// unrelated <code> snippets (example hex values, JSON keys, prose). There's no structured
+// API for this list, so we scrape the HTML and filter down to what looks like a real key.
 async function scrapeThemeAvailableKeys() {
   const data = await get(THEME_COLOR_REFERENCE_URL);
 
@@ -41,22 +45,25 @@ async function scrapeThemeAvailableKeys() {
     .sort();
 }
 
+// Cross-checks the theme against upstream: generate() builds the theme from src/quasar.yaml
+// the same way the real build does, then we diff its color keys against what scraping found.
+// This is what catches VS Code deprecating/adding keys.
 (async () => {
   const availableKeys = await scrapeThemeAvailableKeys();
   const variants = await generate();
 
-  // Variants may legitimately omit keys from one another, so lint against the
-  // union: a key supported by any variant counts as covered.
   const themeKeys = new Set(
     variants.flatMap(({ theme }) => Object.keys(theme.colors)),
   );
 
+  // Keys we define that VS Code's docs no longer list — likely deprecated upstream.
   for (const key of themeKeys) {
     if (!availableKeys.includes(key)) {
       console.warn(`Unsupported key "${key}", probably deprecated?`);
     }
   }
 
+  // Keys VS Code supports that we don't set — a possible gap to fill.
   for (const key of availableKeys) {
     if (!themeKeys.has(key)) {
       console.warn(`Missing key "${key}" in theme`);

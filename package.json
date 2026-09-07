@@ -44,16 +44,6 @@
         "label": "Quasar",
         "uiTheme": "vs-dark",
         "path": "./themes/quasar-color-theme.json"
-      },
-      {
-        "label": "Quasar Dark",
-        "uiTheme": "vs-dark",
-        "path": "./themes/quasar-dark-color-theme.json"
-      },
-      {
-        "label": "Quasar Ink",
-        "uiTheme": "vs-dark",
-        "path": "./themes/quasar-void-color-theme.json"
       }
     ]
   }

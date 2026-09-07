@@ -1,8 +1,8 @@
 # Quasar theme source. Generated JSON lives in themes/ and is gitignored.
 # Edit this file, then run `npm run build`.
 #
-# Values written as $ROLE resolve per variant from `palettes` below.
-# A `~` value means the key is omitted from that variant.
+# Values written as $ROLE resolve from the `palettes` block below. A `~` value
+# means the key is omitted.
 
 $schema: vscode://schemas/color-theme
 type: dark
@@ -14,6 +14,7 @@ palettes:
     FG_DISABLED: '#4a5470'
     BORDER: '#303850'
     SELECTION: '#f080a033'
+    ACTIVE_BORDER: '#f080a0'
     SURFACE_HOVER: '#303850'
     SURFACE_CHROME: '#1a1a24'
     SURFACE_PANEL: '#232b40'
@@ -31,60 +32,10 @@ palettes:
     FG_OPERATOR_ICON: '#a5b1cc'
     TOK_COMMENT: '#6a789c'
 
-  dark:
-    FG_MUTED: '#6a789c'
-    FG_DISABLED: '#3a4460'
-    BORDER: '#242c40'
-    SELECTION: '#f080a038'
-    SURFACE_HOVER: '#283048'
-    SURFACE_CHROME: '#0e0e14'
-    SURFACE_PANEL: '#1a1a24'
-    SURFACE_RAISED: '#232b40'
-    ACTIVITY_BAR_ACTIVE_BG: '#00000000'
-    SURFACE: '#14141c'
-    FG: '#e8e8f0'
-    ACCENT: '#f080a0'
-    SELECTION_SUBTLE: '#f080a01f'
-    ACCENT_TYPE: '#c98ba0'
-    SURFACE_TAB_ACTIVE: '#1e2436'
-    ACCENT_FUNCTION: '#84acdc'
-    ACCENT_STRING: '#8fc7b0'
-    FG_VARIABLE: '#c6cee0'
-    FG_OPERATOR_ICON: '#8090b0'
-    TOK_COMMENT: '#6a789c'
-
-  ink:
-    FG_MUTED: '#6a789c'
-    FG_DISABLED: '#303850'
-    BORDER: '#1e2436'
-    SELECTION: '#f080a042'
-    SURFACE_HOVER: '#232b40'
-    SURFACE_CHROME: '#0a0a10'
-    SURFACE_PANEL: '#0e0e14'
-    SURFACE_RAISED: '#1a1a24'
-    ACTIVITY_BAR_ACTIVE_BG: '#00000000'
-    SURFACE: '#0a0a10'
-    FG: '#f8f8f8'
-    ACCENT: '#f4a0b8'
-    SELECTION_SUBTLE: '#f080a024'
-    ACCENT_TYPE: '#8cc5cc'
-    SURFACE_TAB_ACTIVE: '#1a1a24'
-    ACCENT_FUNCTION: '#84acdc'
-    ACCENT_STRING: '#8fc7b0'
-    FG_VARIABLE: '#f0f0f8'
-    FG_OPERATOR_ICON: '#a5b1cc'
-    TOK_COMMENT: '#3a4460'
-
 variants:
   - id: quasar
     label: "Quasar"
     file: quasar-color-theme.json
-  - id: dark
-    label: "Quasar Dark"
-    file: quasar-dark-color-theme.json
-  - id: ink
-    label: "Quasar Ink"
-    file: quasar-void-color-theme.json
 
 colors:
   foreground: '#a5b1cc'
@@ -98,7 +49,7 @@ colors:
   icon.foreground: '#a5b1cc'
   sash.hoverBorder: '#f080a0'
   toolbar.hoverBackground: $SURFACE_HOVER
-  toolbar.activeBackground: $BORDER
+  toolbar.activeBackground: $ACTIVE_BORDER
   titleBar.activeBackground: $SURFACE_CHROME
   titleBar.activeForeground: '#a5b1cc'
   titleBar.inactiveBackground: $SURFACE_CHROME
@@ -108,13 +59,13 @@ colors:
   window.inactiveBorder: $BORDER
   menubar.selectionForeground: '#f0f0f8'
   menubar.selectionBackground: $SURFACE_HOVER
-  menubar.selectionBorder: '#00000000'
+  menubar.selectionBorder: $ACTIVE_BORDER
   menu.background: $SURFACE_PANEL
   menu.foreground: '#a5b1cc'
   menu.border: $BORDER
   menu.selectionForeground: '#f0f0f8'
   menu.selectionBackground: '#f080a029'
-  menu.selectionBorder: '#00000000'
+  menu.selectionBorder: '#f080a0'
   menu.separatorBackground: $BORDER
   quickInput.background: $SURFACE_PANEL
   quickInput.foreground: '#a5b1cc'
@@ -141,7 +92,7 @@ colors:
   activityBar.background: $SURFACE_CHROME
   activityBar.foreground: '#f0f0f8'
   activityBar.inactiveForeground: $FG_MUTED
-  activityBar.border: $BORDER
+  activityBar.border: '#00000000'
   activityBar.activeBorder: '#f080a0'
   activityBar.activeBackground: $ACTIVITY_BAR_ACTIVE_BG
   activityBar.activeFocusBorder: '#f080a0'
@@ -201,8 +152,11 @@ colors:
   editor.selectionHighlightBackground: $SELECTION_SUBTLE
   editor.selectionHighlightBorder: '#00000000'
   editor.wordHighlightBackground: '#8090b026'
+  editor.wordHighlightBorder: '#00000000'
   editor.wordHighlightStrongBackground: '#8090b03d'
+  editor.wordHighlightStrongBorder: '#00000000'
   editor.wordHighlightTextBackground: '#8090b026'
+  editor.wordHighlightTextBorder: '#00000000'
   editor.findMatchBackground: '#f080a04d'
   editor.findMatchBorder: '#f080a0'
   editor.findMatchHighlightBackground: '#f080a026'
@@ -244,15 +198,15 @@ colors:
   editorError.border: '#00000000'
   editorWarning.foreground: '#d4a259'
   editorWarning.border: '#00000000'
-  editorInfo.foreground: '#6090c8'
+  editorInfo.foreground: '#6a789c'
   editorInfo.border: '#00000000'
   editorHint.foreground: $FG_MUTED
   editorHint.border: '#00000000'
   problemsErrorIcon.foreground: '#f080a0'
   problemsWarningIcon.foreground: '#d4a259'
-  problemsInfoIcon.foreground: '#6090c8'
+  problemsInfoIcon.foreground: '#6a789c'
   editorGutter.background: $SURFACE
-  editorGutter.modifiedBackground: '#d4a259'
+  editorGutter.modifiedBackground: '#6090c8'
   editorGutter.addedBackground: '#74b39a'
   editorGutter.deletedBackground: '#f080a0'
   editorGutter.commentRangeForeground: $FG_DISABLED
@@ -262,12 +216,12 @@ colors:
   editorOverviewRuler.findMatchForeground: '#f080a099'
   editorOverviewRuler.selectionHighlightForeground: '#8090b066'
   editorOverviewRuler.wordHighlightForeground: '#8090b066'
-  editorOverviewRuler.modifiedForeground: '#d4a259'
+  editorOverviewRuler.modifiedForeground: '#6090c8'
   editorOverviewRuler.addedForeground: '#74b39a'
   editorOverviewRuler.deletedForeground: '#f080a0'
   editorOverviewRuler.errorForeground: '#f080a0'
   editorOverviewRuler.warningForeground: '#d4a259'
-  editorOverviewRuler.infoForeground: '#6090c8'
+  editorOverviewRuler.infoForeground: '#6a789c'
   editorOverviewRuler.bracketMatchForeground: '#b8506e'
   editorWidget.background: $SURFACE_PANEL
   editorWidget.foreground: '#a5b1cc'
@@ -294,7 +248,7 @@ colors:
   editorMarkerNavigation.background: $SURFACE_PANEL
   editorMarkerNavigationError.background: '#f080a0'
   editorMarkerNavigationWarning.background: '#d4a259'
-  editorMarkerNavigationInfo.background: '#6090c8'
+  editorMarkerNavigationInfo.background: '#6a789c'
   peekView.border: '#f080a0'
   peekViewEditor.background: $SURFACE_CHROME
   peekViewEditor.matchHighlightBackground: '#f080a03d'
@@ -319,7 +273,7 @@ colors:
   editorPane.background: $SURFACE
   tab.activeBackground: $SURFACE_TAB_ACTIVE
   tab.activeForeground: '#f0f0f8'
-  tab.activeBorder: '#00000000'
+  tab.activeBorder: '#f080a0'
   tab.activeBorderTop: '#f080a0'
   tab.inactiveBackground: $SURFACE_PANEL
   tab.inactiveForeground: $FG_MUTED
@@ -330,10 +284,10 @@ colors:
   tab.border: $BORDER
   tab.hoverBackground: $SURFACE_HOVER
   tab.hoverForeground: '#f0f0f8'
-  tab.hoverBorder: '#00000000'
+  tab.hoverBorder: '#f080a0'
   tab.lastPinnedBorder: $FG_DISABLED
-  tab.activeModifiedBorder: '#d4a259'
-  tab.inactiveModifiedBorder: '#d4a25980'
+  tab.activeModifiedBorder: '#6090c8'
+  tab.inactiveModifiedBorder: '#6a789c80'
   tab.dragAndDropBorder: '#f080a0'
   breadcrumb.background: $SURFACE
   breadcrumb.foreground: $FG_MUTED
@@ -343,7 +297,7 @@ colors:
   minimap.background: $SURFACE
   minimap.foregroundOpacity: '#000000c0'
   minimap.selectionHighlight: '#f080a066'
-  minimap.findMatchHighlight: '#FF550080'
+  minimap.findMatchHighlight: '#f080a080'
   minimap.errorHighlight: '#f080a0'
   minimap.warningHighlight: '#d4a259'
   minimap.selectionOccurrenceHighlight: '#8090b066'
@@ -351,7 +305,7 @@ colors:
   minimapSlider.hoverBackground: '#3a446080'
   minimapSlider.activeBackground: '#4a547099'
   minimapGutter.addedBackground: '#74b39a'
-  minimapGutter.modifiedBackground: '#d4a259'
+  minimapGutter.modifiedBackground: '#6a789c'
   minimapGutter.deletedBackground: '#f080a0'
   panel.background: $SURFACE_CHROME
   panel.border: $BORDER
@@ -377,7 +331,7 @@ colors:
   terminal.findMatchBackground: '#f080a04d'
   terminal.findMatchBorder: '#f080a0'
   terminal.findMatchHighlightBackground: '#f080a026'
-  terminal.findMatchHighlightBorder: '#00000000'
+  terminal.findMatchHighlightBorder: '#f080a0'
   terminalCursor.foreground: '#f080a0'
   terminalCursor.background: '#0e0e14'
   terminalCommandDecoration.defaultBackground: '#6a789c'
@@ -445,7 +399,7 @@ colors:
   inputValidation.warningBorder: '#d4a259'
   inputValidation.infoBackground: '#151f2a'
   inputValidation.infoForeground: '#84acdc'
-  inputValidation.infoBorder: '#6090c8'
+  inputValidation.infoBorder: '#6a789c'
   dropdown.background: '#0e0e14'
   dropdown.listBackground: $SURFACE_PANEL
   dropdown.foreground: '#f0f0f8'
@@ -453,7 +407,7 @@ colors:
   button.background: '#f080a0'
   button.foreground: '#14141c'
   button.hoverBackground: '#f4a0b8'
-  button.border: '#00000000'
+  button.border: '#f080a0'
   button.separator: '#14141c40'
   button.secondaryBackground: $SURFACE_RAISED
   button.secondaryForeground: '#f0f0f8'
@@ -485,17 +439,17 @@ colors:
   notificationLink.foreground: '#f4a0b8'
   notificationsErrorIcon.foreground: '#f080a0'
   notificationsWarningIcon.foreground: '#d4a259'
-  notificationsInfoIcon.foreground: '#6090c8'
+  notificationsInfoIcon.foreground: '#6a789c'
   banner.background: $SURFACE_RAISED
   banner.foreground: '#f0f0f8'
   banner.iconForeground: '#f080a0'
   gitDecoration.addedResourceForeground: '#8fc7b0'
-  gitDecoration.modifiedResourceForeground: '#e0b478'
+  gitDecoration.modifiedResourceForeground: '#6090c8'
   gitDecoration.deletedResourceForeground: '#f080a0'
   gitDecoration.renamedResourceForeground: '#8cc5cc'
   gitDecoration.untrackedResourceForeground: '#8fc7b0'
   gitDecoration.ignoredResourceForeground: $FG_DISABLED
-  gitDecoration.stageModifiedResourceForeground: '#d4a259'
+  gitDecoration.stageModifiedResourceForeground: '#6090c8'
   gitDecoration.stageDeletedResourceForeground: '#b8506e'
   gitDecoration.conflictingResourceForeground: '#f4a0b8'
   gitDecoration.submoduleResourceForeground: '#c98ba0'
@@ -534,7 +488,7 @@ colors:
   mergeEditor.conflict.handledUnfocused.border: '#74b39a'
   mergeEditor.conflict.handledFocused.border: '#8fc7b0'
   editorOverviewRuler.currentContentForeground: '#f080a0'
-  editorOverviewRuler.incomingContentForeground: '#6090c8'
+  editorOverviewRuler.incomingContentForeground: '#74b39a'
   editorOverviewRuler.commonContentForeground: '#6a789c'
   debugToolBar.background: $SURFACE_PANEL
   debugToolBar.border: $BORDER
@@ -567,7 +521,7 @@ colors:
   debugTokenExpression.boolean: '#e0b478'
   debugTokenExpression.number: '#e0b478'
   debugTokenExpression.error: '#f080a0'
-  editor.stackFrameHighlightBackground: '#d4a25926'
+  editor.stackFrameHighlightBackground: '#6090c826'
   editor.focusedStackFrameHighlightBackground: '#74b39a26'
   testing.iconFailed: '#f080a0'
   testing.iconErrored: '#f4a0b8'
@@ -579,7 +533,7 @@ colors:
   testing.message.error.badgeBackground: !alpha [$ACCENT, '33']
   testing.message.error.badgeForeground: $ACCENT
   testing.message.error.badgeBorder: !alpha [$ACCENT, '4d']
-  testing.message.info.decorationForeground: '#6090c8'
+  testing.message.info.decorationForeground: '#6a789c'
   testing.peekBorder: '#f080a0'
   testing.peekHeaderBackground: $SURFACE_PANEL
   notebook.editorBackground: $SURFACE

@@ -1,14 +1,8 @@
 # Quasar
 
-A dark theme for out of space. Three variants, one palette.
+A dark theme for out of space.
 
-| Variant | Editor background | Accent for types |
-| --- | --- | --- |
-| **Quasar** | `#1e2436` | mauve `#c98ba0` |
-| **Quasar Dark** | `#14141c` | mauve `#c98ba0` |
-| **Quasar Ink** | `#0a0a10` | cyan `#8cc5cc` |
-
-Pick one via `Preferences: Color Theme`.
+Select it via `Preferences: Color Theme` → **Quasar**.
 
 ## Recommended settings
 
@@ -58,28 +52,27 @@ Quasar deliberately does **not** ship these as `configurationDefaults`. That con
 point applies when the extension is *installed*, not when the theme is *selected* — so it
 would change the fonts of people who install Quasar and then use something else.
 
-`editor.semanticHighlighting.enabled` is not needed: all three theme files declare
-`"semanticHighlighting": true` themselves.
+`editor.semanticHighlighting.enabled` is not needed: the theme file declares
+`"semanticHighlighting": true` itself.
 
 ## Development
 
-Colours live in [src/quasar.yml](src/quasar.yml) — one shared structure plus three
-palettes. The files in `themes/` are generated and gitignored; never edit them directly.
+Colours live in [src/quasar.yaml](src/quasar.yaml). The file in `themes/` is generated
+and gitignored; never edit it directly.
 
 ```bash
 npm install
-npm run build     # src/quasar.yml -> themes/*.json
+npm run build     # src/quasar.yaml -> themes/quasar-color-theme.json
 npm run verify    # round-trip the generated output against themes/
 npm run lint      # compare against the VS Code theme-color reference
 npm run package   # build + vsce package
 ```
 
 A value written as `$ROLE` in `colors`, `tokenColors` or `semanticTokenColors` resolves
-per variant from `palettes` at the top of the file; a literal `'#rrggbb'` is shared by all
-three. Change a role once and every key bound to it moves together. A `~` value omits the
-key from that variant.
+from `palettes` at the top of the file; a literal `'#rrggbb'` is shared as-is. Change a
+role once and every key bound to it moves together. A `~` value omits the key entirely.
 
-Press `F5` to open an Extension Development Host with the themes loaded. To find the
+Press `F5` to open an Extension Development Host with the theme loaded. To find the
 TextMate scope behind a token, run `Developer: Inspect Editor Tokens and Scopes` there.
 
 ## License
