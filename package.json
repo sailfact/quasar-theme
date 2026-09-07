@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "publisher": "sailfact",
   "license": "MIT",
-  "icon": "images/icon.png",
+  "icon": "assets/icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/sailfact/quasar-theme.git"
@@ -27,18 +27,33 @@
     "theme": "dark"
   },
   "scripts": {
+    "build": "node scripts/build.js",
+    "verify": "node scripts/verify.js",
+    "lint": "node scripts/lint.js",
+    "vscode:prepublish": "node scripts/build.js",
     "package": "vsce package",
     "publish": "vsce publish"
   },
   "devDependencies": {
-    "@vscode/vsce": "^3.2.1"
+    "@vscode/vsce": "^3.2.1",
+    "js-yaml": "^4.1.0"
   },
   "contributes": {
     "themes": [
       {
         "label": "Quasar",
         "uiTheme": "vs-dark",
-        "path": "./themes/Quasar-color-theme.json"
+        "path": "./themes/quasar-color-theme.json"
+      },
+      {
+        "label": "Quasar Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/quasar-dark-color-theme.json"
+      },
+      {
+        "label": "Quasar Ink",
+        "uiTheme": "vs-dark",
+        "path": "./themes/quasar-void-color-theme.json"
       }
     ]
   }

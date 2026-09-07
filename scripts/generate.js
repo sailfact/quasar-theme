@@ -1,7 +1,6 @@
 const { readFile } = require("fs").promises;
 const { join } = require("path");
 const { Type, DEFAULT_SCHEMA, load } = require("js-yaml");
-const tinycolor = require("tinycolor2");
 
 /**
  * @typedef {Object} TokenColor - Textmate token color.
@@ -12,68 +11,127 @@ const tinycolor = require("tinycolor2");
  */
 
 /**
- * @typedef {Object} Theme - Parsed theme object.
- * @prop {Record<'base'|'ansi'|'brightOther'|'other', string[]>} dracula - Dracula color variables.
- * @prop {Record<string, string|null|undefined>} colors - VSCode color mapping.
+ * @typedef {Object} Variant
+ * @prop {string} id - Key into `palettes`.
+ * @prop {string} label - Theme name shown in the picker.
+ * @prop {string} file - Output filename under themes/.
+ */
+
+/**
+ * @typedef {Object} Source - Parsed source file.
+ * @prop {Record<string, Record<string, string|null>>} palettes - Per-variant role values.
+ * @prop {Variant[]} variants - Themes to emit.
+ * @prop {Record<string, string|null>} colors - VSCode color mapping, values may be `$ROLE`.
  * @prop {TokenColor[]} tokenColors - Textmate token colors.
  */
 
 /**
- * @typedef {(yamlObj: Theme) => Theme} ThemeTransform
+ * `!alpha [$ACCENT, '1f']` appends a constant alpha suffix to a role or literal.
+ * Resolution of the `$ROLE` half happens later, in `substitute`.
+ *
+ * It has to stay a structured node rather than a concatenated string: hex alpha
+ * digits are legal role characters, so `"$ACCENT1f"` would parse back out as a
+ * role named `ACCENT1f`.
  */
+const ALPHA = "__alpha";
 
 const withAlphaType = new Type("!alpha", {
   kind: "sequence",
-  construct: ([hexRGB, alpha]) => hexRGB + alpha,
-  represent: ([hexRGB, alpha]) => hexRGB + alpha,
+  construct: ([color, alpha]) => ({ [ALPHA]: { color, alpha } }),
 });
 
 const schema = DEFAULT_SCHEMA.extend([withAlphaType]);
 
+/** Keys that describe the build rather than the theme; never emitted. */
+const SCAFFOLDING = ["palettes", "variants"];
+
 /**
- * Soft variant transform.
- * @type {ThemeTransform}
+ * Replace a leading `$ROLE` with its value for this variant. A trailing alpha
+ * suffix (from `!alpha`) is preserved.
+ * @param {string} value
+ * @param {Record<string, string|null>} palette
+ * @param {string} variantId
  */
-const transformSoft = (theme) => {
-  /** @type {Theme} */
-  const soft = JSON.parse(JSON.stringify(theme));
-  const brightColors = [...soft.dracula.ansi, ...soft.dracula.brightOther];
-  for (const key of Object.keys(soft.colors)) {
-    if (brightColors.includes(soft.colors[key])) {
-      soft.colors[key] = tinycolor(soft.colors[key])
-        .desaturate(20)
-        .toHexString();
-    }
+const resolveValue = (value, palette, variantId) => {
+  if (typeof value !== "string" || !value.startsWith("$")) return value;
+  const match = /^\$([A-Za-z0-9_]+)(.*)$/.exec(value);
+  const [, role, suffix] = match;
+  if (!(role in palette)) {
+    throw new Error(
+      `Unknown role "$${role}" for variant "${variantId}". ` +
+        `Add it to palettes.${variantId} in src/quasar.yaml.`,
+    );
   }
-  soft.tokenColors = soft.tokenColors.map((value) => {
-    if (brightColors.includes(value.settings.foreground)) {
-      value.settings.foreground = tinycolor(value.settings.foreground)
-        .desaturate(20)
-        .toHexString();
-    }
-    return value;
-  });
-  return soft;
+  const resolved = palette[role];
+  // A null palette entry means "omit this key for this variant".
+  if (resolved === null || resolved === undefined) return null;
+  return `${resolved}${suffix}`;
 };
 
+/**
+ * Deep-walk a structure, resolving `$ROLE` strings and dropping any key whose
+ * value resolves to null. Dropping is what lets a single structure omit keys
+ * per variant, and matches the hand-written JSON.
+ *
+ * Only null is dropped, never "". An empty `fontStyle` is meaningful: it
+ * explicitly clears italic/bold inherited from a broader rule.
+ */
+const substitute = (node, palette, variantId) => {
+  if (Array.isArray(node)) {
+    return node.map((n) => substitute(n, palette, variantId));
+  }
+  if (node && typeof node === "object" && node[ALPHA]) {
+    const { color, alpha } = node[ALPHA];
+    const resolved = substitute(color, palette, variantId);
+    // A role that is `~` for this variant drops the key, alpha suffix and all.
+    return resolved === null ? null : `${resolved}${alpha}`;
+  }
+  if (node && typeof node === "object") {
+    const out = {};
+    for (const [key, raw] of Object.entries(node)) {
+      const value = substitute(raw, palette, variantId);
+      if (value === null || value === undefined) continue;
+      out[key] = value;
+    }
+    return out;
+  }
+  return resolveValue(node, palette, variantId);
+};
+
+/**
+ * @returns {Promise<{file: string, theme: object}[]>}
+ */
 module.exports = async () => {
   const yamlFile = await readFile(
-    join(__dirname, "..", "src", "quasar.yml"),
+    join(__dirname, "..", "src", "quasar.yaml"),
     "utf-8",
   );
 
-  /** @type {Theme} */
-  const base = load(yamlFile, { schema });
+  /** @type {Source} */
+  const src = load(yamlFile, { schema });
 
-  // Remove nulls and other falsey values from colors
-  for (const key of Object.keys(base.colors)) {
-    if (!base.colors[key]) {
-      delete base.colors[key];
+  const structure = { ...src };
+  for (const key of SCAFFOLDING) delete structure[key];
+
+  return src.variants.map((variant) => {
+    const palette = src.palettes[variant.id];
+    if (!palette) {
+      throw new Error(`No palette defined for variant "${variant.id}".`);
     }
-  }
 
-  return {
-    base,
-    soft: transformSoft(base),
-  };
+    const resolved = substitute(structure, palette, variant.id);
+
+    return {
+      file: variant.file,
+      theme: {
+        $schema: resolved.$schema,
+        name: variant.label,
+        type: resolved.type,
+        semanticHighlighting: resolved.semanticHighlighting,
+        colors: resolved.colors,
+        tokenColors: resolved.tokenColors,
+        semanticTokenColors: resolved.semanticTokenColors,
+      },
+    };
+  });
 };

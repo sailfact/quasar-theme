@@ -1,0 +1,1053 @@
+# Quasar theme source. Generated JSON lives in themes/ and is gitignored.
+# Edit this file, then run `npm run build`.
+#
+# Values written as $ROLE resolve per variant from `palettes` below.
+# A `~` value means the key is omitted from that variant.
+
+$schema: vscode://schemas/color-theme
+type: dark
+semanticHighlighting: true
+
+palettes:
+  quasar:
+    FG_MUTED: '#8090b0'
+    FG_DISABLED: '#4a5470'
+    BORDER: '#303850'
+    SELECTION: '#f080a033'
+    SURFACE_HOVER: '#303850'
+    SURFACE_CHROME: '#1a1a24'
+    SURFACE_PANEL: '#232b40'
+    SURFACE_RAISED: '#283048'
+    ACTIVITY_BAR_ACTIVE_BG: '#232b40'
+    SURFACE: '#1e2436'
+    FG: '#e8e8f0'
+    ACCENT: '#f080a0'
+    SELECTION_SUBTLE: '#f080a01a'
+    ACCENT_TYPE: '#c98ba0'
+    SURFACE_TAB_ACTIVE: '#283048'
+    ACCENT_FUNCTION: '#a4c4ec'
+    ACCENT_STRING: '#a8cfbe'
+    FG_VARIABLE: '#d8dcea'
+    FG_OPERATOR_ICON: '#a5b1cc'
+    TOK_COMMENT: '#6a789c'
+
+  dark:
+    FG_MUTED: '#6a789c'
+    FG_DISABLED: '#3a4460'
+    BORDER: '#242c40'
+    SELECTION: '#f080a038'
+    SURFACE_HOVER: '#283048'
+    SURFACE_CHROME: '#0e0e14'
+    SURFACE_PANEL: '#1a1a24'
+    SURFACE_RAISED: '#232b40'
+    ACTIVITY_BAR_ACTIVE_BG: '#00000000'
+    SURFACE: '#14141c'
+    FG: '#e8e8f0'
+    ACCENT: '#f080a0'
+    SELECTION_SUBTLE: '#f080a01f'
+    ACCENT_TYPE: '#c98ba0'
+    SURFACE_TAB_ACTIVE: '#1e2436'
+    ACCENT_FUNCTION: '#84acdc'
+    ACCENT_STRING: '#8fc7b0'
+    FG_VARIABLE: '#c6cee0'
+    FG_OPERATOR_ICON: '#8090b0'
+    TOK_COMMENT: '#6a789c'
+
+  ink:
+    FG_MUTED: '#6a789c'
+    FG_DISABLED: '#303850'
+    BORDER: '#1e2436'
+    SELECTION: '#f080a042'
+    SURFACE_HOVER: '#232b40'
+    SURFACE_CHROME: '#0a0a10'
+    SURFACE_PANEL: '#0e0e14'
+    SURFACE_RAISED: '#1a1a24'
+    ACTIVITY_BAR_ACTIVE_BG: '#00000000'
+    SURFACE: '#0a0a10'
+    FG: '#f8f8f8'
+    ACCENT: '#f4a0b8'
+    SELECTION_SUBTLE: '#f080a024'
+    ACCENT_TYPE: '#8cc5cc'
+    SURFACE_TAB_ACTIVE: '#1a1a24'
+    ACCENT_FUNCTION: '#84acdc'
+    ACCENT_STRING: '#8fc7b0'
+    FG_VARIABLE: '#f0f0f8'
+    FG_OPERATOR_ICON: '#a5b1cc'
+    TOK_COMMENT: '#3a4460'
+
+variants:
+  - id: quasar
+    label: "Quasar"
+    file: quasar-color-theme.json
+  - id: dark
+    label: "Quasar Dark"
+    file: quasar-dark-color-theme.json
+  - id: ink
+    label: "Quasar Ink"
+    file: quasar-void-color-theme.json
+
+colors:
+  foreground: '#a5b1cc'
+  errorForeground: '#f080a0'
+  descriptionForeground: $FG_MUTED
+  disabledForeground: $FG_DISABLED
+  focusBorder: '#f080a0'
+  widget.border: $BORDER
+  widget.shadow: '#08080e99'
+  selection.background: $SELECTION
+  icon.foreground: '#a5b1cc'
+  sash.hoverBorder: '#f080a0'
+  toolbar.hoverBackground: $SURFACE_HOVER
+  toolbar.activeBackground: $BORDER
+  titleBar.activeBackground: $SURFACE_CHROME
+  titleBar.activeForeground: '#a5b1cc'
+  titleBar.inactiveBackground: $SURFACE_CHROME
+  titleBar.inactiveForeground: $FG_MUTED
+  titleBar.border: $BORDER
+  window.activeBorder: $BORDER
+  window.inactiveBorder: $BORDER
+  menubar.selectionForeground: '#f0f0f8'
+  menubar.selectionBackground: $SURFACE_HOVER
+  menubar.selectionBorder: '#00000000'
+  menu.background: $SURFACE_PANEL
+  menu.foreground: '#a5b1cc'
+  menu.border: $BORDER
+  menu.selectionForeground: '#f0f0f8'
+  menu.selectionBackground: '#f080a029'
+  menu.selectionBorder: '#00000000'
+  menu.separatorBackground: $BORDER
+  quickInput.background: $SURFACE_PANEL
+  quickInput.foreground: '#a5b1cc'
+  quickInputTitle.background: $SURFACE_CHROME
+  quickInputList.focusBackground: '#f080a029'
+  quickInputList.focusForeground: '#f0f0f8'
+  quickInputList.focusIconForeground: '#f080a0'
+  pickerGroup.foreground: $FG_MUTED
+  pickerGroup.border: $BORDER
+  keybindingLabel.background: $SURFACE_RAISED
+  keybindingLabel.foreground: '#c6cee0'
+  keybindingLabel.border: $BORDER
+  keybindingLabel.bottomBorder: $FG_DISABLED
+  keybindingTable.headerBackground: $SURFACE_RAISED
+  keybindingTable.rowsBackground: $SURFACE_PANEL
+  commandCenter.background: $SURFACE_RAISED
+  commandCenter.foreground: '#a5b1cc'
+  commandCenter.border: $BORDER
+  commandCenter.activeBackground: $SURFACE_HOVER
+  commandCenter.activeForeground: '#f0f0f8'
+  commandCenter.activeBorder: '#f080a0'
+  commandCenter.inactiveForeground: $FG_MUTED
+  commandCenter.inactiveBorder: $BORDER
+  activityBar.background: $SURFACE_CHROME
+  activityBar.foreground: '#f0f0f8'
+  activityBar.inactiveForeground: $FG_MUTED
+  activityBar.border: $BORDER
+  activityBar.activeBorder: '#f080a0'
+  activityBar.activeBackground: $ACTIVITY_BAR_ACTIVE_BG
+  activityBar.activeFocusBorder: '#f080a0'
+  activityBarBadge.background: '#f080a0'
+  activityBarBadge.foreground: '#14141c'
+  activityBarTop.foreground: '#f0f0f8'
+  activityBarTop.inactiveForeground: $FG_MUTED
+  activityBarTop.activeBorder: '#f080a0'
+  sideBar.background: $SURFACE_PANEL
+  sideBar.foreground: '#a5b1cc'
+  sideBar.border: $BORDER
+  sideBar.dropBackground: '#f080a01f'
+  sideBarTitle.foreground: $FG_MUTED
+  sideBarTitle.background: $SURFACE_PANEL
+  sideBarSectionHeader.background: $SURFACE_PANEL
+  sideBarSectionHeader.foreground: $FG_MUTED
+  sideBarSectionHeader.border: $BORDER
+  sideBarActivityBarTop.border: $BORDER
+  list.activeSelectionBackground: '#f080a029'
+  list.activeSelectionForeground: '#f0f0f8'
+  list.activeSelectionIconForeground: '#f080a0'
+  list.inactiveSelectionBackground: $SURFACE_RAISED
+  list.inactiveSelectionForeground: '#c6cee0'
+  list.hoverBackground: $SURFACE_HOVER
+  list.hoverForeground: '#f0f0f8'
+  list.focusBackground: '#f080a01f'
+  list.focusForeground: '#f0f0f8'
+  list.focusOutline: '#f080a0'
+  list.inactiveFocusBackground: $SURFACE_RAISED
+  list.inactiveFocusOutline: $BORDER
+  list.dropBackground: '#f080a01f'
+  list.highlightForeground: '#f080a0'
+  list.focusHighlightForeground: '#f4a0b8'
+  list.errorForeground: '#f080a0'
+  list.warningForeground: '#d4a259'
+  list.invalidItemForeground: $FG_DISABLED
+  list.filterMatchBackground: '#f080a033'
+  list.filterMatchBorder: '#b8506e'
+  listFilterWidget.background: $SURFACE_RAISED
+  listFilterWidget.outline: '#f080a0'
+  listFilterWidget.noMatchesOutline: '#b8506e'
+  listFilterWidget.shadow: '#08080e99'
+  tree.indentGuidesStroke: $BORDER
+  tree.inactiveIndentGuidesStroke: $BORDER
+  tree.tableColumnsBorder: $BORDER
+  tree.tableOddRowsBackground: '#ffffff05'
+  editor.background: $SURFACE
+  editor.foreground: $FG
+  editorLineNumber.foreground: $FG_DISABLED
+  editorLineNumber.activeForeground: $FG_MUTED
+  editorLineNumber.dimmedForeground: $FG_DISABLED
+  editorCursor.foreground: $ACCENT
+  editorCursor.background: '#0e0e14'
+  editor.selectionBackground: $SELECTION
+  editor.selectionForeground: '#f8f8f8'
+  editor.inactiveSelectionBackground: $SELECTION_SUBTLE
+  editor.selectionHighlightBackground: $SELECTION_SUBTLE
+  editor.selectionHighlightBorder: '#00000000'
+  editor.wordHighlightBackground: '#8090b026'
+  editor.wordHighlightStrongBackground: '#8090b03d'
+  editor.wordHighlightTextBackground: '#8090b026'
+  editor.findMatchBackground: '#f080a04d'
+  editor.findMatchBorder: '#f080a0'
+  editor.findMatchHighlightBackground: '#f080a026'
+  editor.findMatchHighlightBorder: '#00000000'
+  editor.findRangeHighlightBackground: '#8090b01a'
+  editor.hoverHighlightBackground: '#8090b021'
+  editor.lineHighlightBackground: '#ffffff08'
+  editor.lineHighlightBorder: '#00000000'
+  editor.rangeHighlightBackground: '#8090b01a'
+  editor.symbolHighlightBackground: '#f080a026'
+  editorWhitespace.foreground: $BORDER
+  editorIndentGuide.background1: $BORDER
+  editorIndentGuide.activeBackground1: $FG_DISABLED
+  editorInlayHint.background: $SURFACE_RAISED
+  editorInlayHint.foreground: $FG_MUTED
+  editorInlayHint.typeBackground: $SURFACE_RAISED
+  editorInlayHint.typeForeground: $ACCENT_TYPE
+  editorInlayHint.parameterBackground: $SURFACE_RAISED
+  editorInlayHint.parameterForeground: $FG_MUTED
+  editorRuler.foreground: $BORDER
+  editorCodeLens.foreground: $FG_MUTED
+  editorBracketMatch.background: '#f080a01f'
+  editorBracketMatch.border: '#b8506e'
+  editorBracketHighlight.foreground1: '#f080a0'
+  editorBracketHighlight.foreground2: '#84acdc'
+  editorBracketHighlight.foreground3: '#8fc7b0'
+  editorBracketHighlight.foreground4: '#e0b478'
+  editorBracketHighlight.foreground5: '#c98ba0'
+  editorBracketHighlight.foreground6: '#8cc5cc'
+  editorBracketHighlight.unexpectedBracket.foreground: '#f4a0b8'
+  editorBracketPairGuide.background1: '#f080a04d'
+  editorBracketPairGuide.activeBackground1: '#f080a0'
+  editorLink.activeForeground: '#f4a0b8'
+  editorUnnecessaryCode.opacity: '#00000080'
+  editorUnnecessaryCode.border: '#00000000'
+  editorLightBulb.foreground: '#e0b478'
+  editorLightBulbAutoFix.foreground: '#8fc7b0'
+  editorError.foreground: '#f080a0'
+  editorError.border: '#00000000'
+  editorWarning.foreground: '#d4a259'
+  editorWarning.border: '#00000000'
+  editorInfo.foreground: '#6090c8'
+  editorInfo.border: '#00000000'
+  editorHint.foreground: $FG_MUTED
+  editorHint.border: '#00000000'
+  problemsErrorIcon.foreground: '#f080a0'
+  problemsWarningIcon.foreground: '#d4a259'
+  problemsInfoIcon.foreground: '#6090c8'
+  editorGutter.background: $SURFACE
+  editorGutter.modifiedBackground: '#d4a259'
+  editorGutter.addedBackground: '#74b39a'
+  editorGutter.deletedBackground: '#f080a0'
+  editorGutter.commentRangeForeground: $FG_DISABLED
+  editorGutter.foldingControlForeground: $FG_MUTED
+  editorOverviewRuler.background: $SURFACE
+  editorOverviewRuler.border: $BORDER
+  editorOverviewRuler.findMatchForeground: '#f080a099'
+  editorOverviewRuler.selectionHighlightForeground: '#8090b066'
+  editorOverviewRuler.wordHighlightForeground: '#8090b066'
+  editorOverviewRuler.modifiedForeground: '#d4a259'
+  editorOverviewRuler.addedForeground: '#74b39a'
+  editorOverviewRuler.deletedForeground: '#f080a0'
+  editorOverviewRuler.errorForeground: '#f080a0'
+  editorOverviewRuler.warningForeground: '#d4a259'
+  editorOverviewRuler.infoForeground: '#6090c8'
+  editorOverviewRuler.bracketMatchForeground: '#b8506e'
+  editorWidget.background: $SURFACE_PANEL
+  editorWidget.foreground: '#a5b1cc'
+  editorWidget.border: $BORDER
+  editorWidget.resizeBorder: '#f080a0'
+  editorSuggestWidget.background: $SURFACE_PANEL
+  editorSuggestWidget.border: $BORDER
+  editorSuggestWidget.foreground: '#a5b1cc'
+  editorSuggestWidget.focusHighlightForeground: '#f4a0b8'
+  editorSuggestWidget.highlightForeground: '#f080a0'
+  editorSuggestWidget.selectedBackground: '#f080a029'
+  editorSuggestWidget.selectedForeground: '#f0f0f8'
+  editorSuggestWidget.selectedIconForeground: '#f080a0'
+  editorSuggestWidgetStatus.foreground: $FG_MUTED
+  editorHoverWidget.background: $SURFACE_PANEL
+  editorHoverWidget.foreground: '#a5b1cc'
+  editorHoverWidget.border: $BORDER
+  editorHoverWidget.highlightForeground: '#f080a0'
+  editorHoverWidget.statusBarBackground: $SURFACE_CHROME
+  editorGhostText.foreground: $FG_DISABLED
+  editorGhostText.border: '#00000000'
+  editorStickyScroll.background: $SURFACE_PANEL
+  editorStickyScrollHover.background: $SURFACE_HOVER
+  editorMarkerNavigation.background: $SURFACE_PANEL
+  editorMarkerNavigationError.background: '#f080a0'
+  editorMarkerNavigationWarning.background: '#d4a259'
+  editorMarkerNavigationInfo.background: '#6090c8'
+  peekView.border: '#f080a0'
+  peekViewEditor.background: $SURFACE_CHROME
+  peekViewEditor.matchHighlightBackground: '#f080a03d'
+  peekViewEditorGutter.background: $SURFACE_CHROME
+  peekViewResult.background: $SURFACE_PANEL
+  peekViewResult.fileForeground: '#f0f0f8'
+  peekViewResult.lineForeground: '#a5b1cc'
+  peekViewResult.matchHighlightBackground: '#f080a03d'
+  peekViewResult.selectionBackground: '#f080a029'
+  peekViewResult.selectionForeground: '#f0f0f8'
+  peekViewTitle.background: $SURFACE_CHROME
+  peekViewTitleLabel.foreground: '#f0f0f8'
+  peekViewTitleDescription.foreground: $FG_MUTED
+  editorGroup.border: $BORDER
+  editorGroup.dropBackground: '#f080a01f'
+  editorGroup.emptyBackground: $SURFACE
+  editorGroup.focusedEmptyBorder: '#f080a0'
+  editorGroupHeader.tabsBackground: $SURFACE_PANEL
+  editorGroupHeader.tabsBorder: $BORDER
+  editorGroupHeader.noTabsBackground: $SURFACE_PANEL
+  editorGroupHeader.border: $BORDER
+  editorPane.background: $SURFACE
+  tab.activeBackground: $SURFACE_TAB_ACTIVE
+  tab.activeForeground: '#f0f0f8'
+  tab.activeBorder: '#00000000'
+  tab.activeBorderTop: '#f080a0'
+  tab.inactiveBackground: $SURFACE_PANEL
+  tab.inactiveForeground: $FG_MUTED
+  tab.unfocusedActiveBackground: $SURFACE_TAB_ACTIVE
+  tab.unfocusedActiveForeground: '#a5b1cc'
+  tab.unfocusedActiveBorderTop: $FG_DISABLED
+  tab.unfocusedInactiveForeground: $FG_DISABLED
+  tab.border: $BORDER
+  tab.hoverBackground: $SURFACE_HOVER
+  tab.hoverForeground: '#f0f0f8'
+  tab.hoverBorder: '#00000000'
+  tab.lastPinnedBorder: $FG_DISABLED
+  tab.activeModifiedBorder: '#d4a259'
+  tab.inactiveModifiedBorder: '#d4a25980'
+  tab.dragAndDropBorder: '#f080a0'
+  breadcrumb.background: $SURFACE
+  breadcrumb.foreground: $FG_MUTED
+  breadcrumb.focusForeground: '#f0f0f8'
+  breadcrumb.activeSelectionForeground: '#f080a0'
+  breadcrumbPicker.background: $SURFACE_PANEL
+  minimap.background: $SURFACE
+  minimap.foregroundOpacity: '#000000c0'
+  minimap.selectionHighlight: '#f080a066'
+  minimap.findMatchHighlight: '#FF550080'
+  minimap.errorHighlight: '#f080a0'
+  minimap.warningHighlight: '#d4a259'
+  minimap.selectionOccurrenceHighlight: '#8090b066'
+  minimapSlider.background: '#30385059'
+  minimapSlider.hoverBackground: '#3a446080'
+  minimapSlider.activeBackground: '#4a547099'
+  minimapGutter.addedBackground: '#74b39a'
+  minimapGutter.modifiedBackground: '#d4a259'
+  minimapGutter.deletedBackground: '#f080a0'
+  panel.background: $SURFACE_CHROME
+  panel.border: $BORDER
+  panel.dropBorder: '#f080a0'
+  panelTitle.activeForeground: '#f0f0f8'
+  panelTitle.activeBorder: '#f080a0'
+  panelTitle.inactiveForeground: $FG_MUTED
+  panelSection.border: $BORDER
+  panelSection.dropBackground: '#f080a01f'
+  panelSectionHeader.background: $SURFACE_CHROME
+  panelSectionHeader.foreground: $FG_MUTED
+  panelSectionHeader.border: $BORDER
+  panelInput.border: $BORDER
+  terminal.background: '#1e2436'
+  terminal.foreground: '#e8e8f0'
+  terminal.border: $BORDER
+  terminal.selectionBackground: '#f080a040'
+  terminal.inactiveSelectionBackground: '#f080a020'
+  terminal.selectionForeground: '#00000000'
+  terminal.hoverHighlightBackground: '#8090b026'
+  terminal.dropBackground: '#f080a01f'
+  terminal.tab.activeBorder: '#f080a0'
+  terminal.findMatchBackground: '#f080a04d'
+  terminal.findMatchBorder: '#f080a0'
+  terminal.findMatchHighlightBackground: '#f080a026'
+  terminal.findMatchHighlightBorder: '#00000000'
+  terminalCursor.foreground: '#f080a0'
+  terminalCursor.background: '#0e0e14'
+  terminalCommandDecoration.defaultBackground: '#6a789c'
+  terminalCommandDecoration.successBackground: '#74b39a'
+  terminalCommandDecoration.errorBackground: '#f080a0'
+  terminalOverviewRuler.cursorForeground: '#f080a0'
+  terminalOverviewRuler.findMatchForeground: '#f080a099'
+  terminalStickyScroll.background: '#14141c'
+  terminalStickyScrollHover.background: '#1e2436'
+  terminal.ansiBlack: '#0e0e14'
+  terminal.ansiBrightBlack: '#3a4460'
+  terminal.ansiRed: '#f080a0'
+  terminal.ansiBrightRed: '#f4a0b8'
+  terminal.ansiGreen: '#74b39a'
+  terminal.ansiBrightGreen: '#8fc7b0'
+  terminal.ansiYellow: '#d4a259'
+  terminal.ansiBrightYellow: '#e0b478'
+  terminal.ansiBlue: '#6090c8'
+  terminal.ansiBrightBlue: '#84acdc'
+  terminal.ansiMagenta: '#a86d7e'
+  terminal.ansiBrightMagenta: '#c98ba0'
+  terminal.ansiCyan: '#6aa8b0'
+  terminal.ansiBrightCyan: '#8cc5cc'
+  terminal.ansiWhite: '#c6cee0'
+  terminal.ansiBrightWhite: '#f8f8f8'
+  statusBar.background: $SURFACE_CHROME
+  statusBar.foreground: '#8090b0'
+  statusBar.border: $BORDER
+  statusBar.debuggingBackground: '#f080a0'
+  statusBar.debuggingForeground: '#14141c'
+  statusBar.debuggingBorder: '#b8506e'
+  statusBar.noFolderBackground: $SURFACE_CHROME
+  statusBar.noFolderForeground: $FG_MUTED
+  statusBar.noFolderBorder: $BORDER
+  statusBar.focusBorder: '#f080a0'
+  statusBarItem.activeBackground: '#f080a033'
+  statusBarItem.hoverBackground: $SURFACE_HOVER
+  statusBarItem.hoverForeground: '#f0f0f8'
+  statusBarItem.focusBorder: '#f080a0'
+  statusBarItem.prominentBackground: $SURFACE_RAISED
+  statusBarItem.prominentForeground: '#f0f0f8'
+  statusBarItem.prominentHoverBackground: $SURFACE_HOVER
+  statusBarItem.remoteBackground: '#f080a0'
+  statusBarItem.remoteForeground: '#14141c'
+  statusBarItem.errorBackground: '#b8506e'
+  statusBarItem.errorForeground: '#f0f0f8'
+  statusBarItem.warningBackground: '#d4a259'
+  statusBarItem.warningForeground: '#14141c'
+  statusBarItem.compactHoverBackground: $SURFACE_HOVER
+  statusBarItem.offlineBackground: '#6a789c'
+  statusBarItem.offlineForeground: '#14141c'
+  input.background: '#0e0e14'
+  input.foreground: '#f0f0f8'
+  input.border: $BORDER
+  input.placeholderForeground: $FG_MUTED
+  inputOption.activeBackground: '#f080a029'
+  inputOption.activeForeground: '#f0f0f8'
+  inputOption.activeBorder: '#f080a0'
+  inputOption.hoverBackground: $SURFACE_HOVER
+  inputValidation.errorBackground: '#2a1520'
+  inputValidation.errorForeground: '#f4a0b8'
+  inputValidation.errorBorder: '#b8506e'
+  inputValidation.warningBackground: '#2a2216'
+  inputValidation.warningForeground: '#e0b478'
+  inputValidation.warningBorder: '#d4a259'
+  inputValidation.infoBackground: '#151f2a'
+  inputValidation.infoForeground: '#84acdc'
+  inputValidation.infoBorder: '#6090c8'
+  dropdown.background: '#0e0e14'
+  dropdown.listBackground: $SURFACE_PANEL
+  dropdown.foreground: '#f0f0f8'
+  dropdown.border: $BORDER
+  button.background: '#f080a0'
+  button.foreground: '#14141c'
+  button.hoverBackground: '#f4a0b8'
+  button.border: '#00000000'
+  button.separator: '#14141c40'
+  button.secondaryBackground: $SURFACE_RAISED
+  button.secondaryForeground: '#f0f0f8'
+  button.secondaryHoverBackground: $SURFACE_HOVER
+  checkbox.background: '#0e0e14'
+  checkbox.foreground: '#f080a0'
+  checkbox.border: $FG_DISABLED
+  checkbox.selectBackground: '#f080a0'
+  checkbox.selectBorder: '#f080a0'
+  radio.activeBackground: '#f080a029'
+  radio.activeForeground: '#f0f0f8'
+  radio.activeBorder: '#f080a0'
+  radio.inactiveBorder: $FG_DISABLED
+  radio.inactiveHoverBackground: $SURFACE_HOVER
+  badge.background: $SURFACE_HOVER
+  badge.foreground: '#c6cee0'
+  progressBar.background: '#f080a0'
+  scrollbar.shadow: '#08080e80'
+  scrollbarSlider.background: '#30385099'
+  scrollbarSlider.hoverBackground: '#3a4460cc'
+  scrollbarSlider.activeBackground: '#4a5470e6'
+  notificationCenter.border: $BORDER
+  notificationCenterHeader.background: $SURFACE_CHROME
+  notificationCenterHeader.foreground: $FG_MUTED
+  notificationToast.border: $BORDER
+  notifications.background: $SURFACE_PANEL
+  notifications.foreground: '#a5b1cc'
+  notifications.border: $BORDER
+  notificationLink.foreground: '#f4a0b8'
+  notificationsErrorIcon.foreground: '#f080a0'
+  notificationsWarningIcon.foreground: '#d4a259'
+  notificationsInfoIcon.foreground: '#6090c8'
+  banner.background: $SURFACE_RAISED
+  banner.foreground: '#f0f0f8'
+  banner.iconForeground: '#f080a0'
+  gitDecoration.addedResourceForeground: '#8fc7b0'
+  gitDecoration.modifiedResourceForeground: '#e0b478'
+  gitDecoration.deletedResourceForeground: '#f080a0'
+  gitDecoration.renamedResourceForeground: '#8cc5cc'
+  gitDecoration.untrackedResourceForeground: '#8fc7b0'
+  gitDecoration.ignoredResourceForeground: $FG_DISABLED
+  gitDecoration.stageModifiedResourceForeground: '#d4a259'
+  gitDecoration.stageDeletedResourceForeground: '#b8506e'
+  gitDecoration.conflictingResourceForeground: '#f4a0b8'
+  gitDecoration.submoduleResourceForeground: '#c98ba0'
+  scmGraph.historyItemHoverLabelForeground: '#14141c'
+  scmGraph.foreground1: '#f080a0'
+  scmGraph.foreground2: '#84acdc'
+  scmGraph.foreground3: '#8fc7b0'
+  scmGraph.foreground4: '#e0b478'
+  scmGraph.foreground5: '#c98ba0'
+  diffEditor.insertedTextBackground: '#74b39a26'
+  diffEditor.insertedLineBackground: '#74b39a1a'
+  diffEditor.removedTextBackground: '#f080a026'
+  diffEditor.removedLineBackground: '#f080a01a'
+  diffEditor.insertedTextBorder: '#00000000'
+  diffEditor.removedTextBorder: '#00000000'
+  diffEditor.border: $BORDER
+  diffEditor.diagonalFill: $BORDER
+  diffEditor.unchangedRegionBackground: $SURFACE_PANEL
+  diffEditor.unchangedRegionForeground: $FG_MUTED
+  diffEditor.unchangedCodeBackground: '#ffffff05'
+  diffEditorGutter.insertedLineBackground: '#74b39a26'
+  diffEditorGutter.removedLineBackground: '#f080a026'
+  diffEditorOverview.insertedForeground: '#74b39a99'
+  diffEditorOverview.removedForeground: '#f080a099'
+  merge.currentHeaderBackground: '#f080a040'
+  merge.currentContentBackground: '#f080a01f'
+  merge.incomingHeaderBackground: '#6090c840'
+  merge.incomingContentBackground: '#6090c81f'
+  merge.commonHeaderBackground: '#6a789c40'
+  merge.commonContentBackground: '#6a789c1f'
+  merge.border: $BORDER
+  mergeEditor.change.background: '#74b39a1f'
+  mergeEditor.change.word.background: '#74b39a33'
+  mergeEditor.conflict.unhandledUnfocused.border: '#d4a259'
+  mergeEditor.conflict.unhandledFocused.border: '#e0b478'
+  mergeEditor.conflict.handledUnfocused.border: '#74b39a'
+  mergeEditor.conflict.handledFocused.border: '#8fc7b0'
+  editorOverviewRuler.currentContentForeground: '#f080a0'
+  editorOverviewRuler.incomingContentForeground: '#6090c8'
+  editorOverviewRuler.commonContentForeground: '#6a789c'
+  debugToolBar.background: $SURFACE_PANEL
+  debugToolBar.border: $BORDER
+  debugIcon.breakpointForeground: '#f080a0'
+  debugIcon.breakpointDisabledForeground: '#b8506e80'
+  debugIcon.breakpointUnverifiedForeground: $FG_DISABLED
+  debugIcon.breakpointCurrentStackframeForeground: '#e0b478'
+  debugIcon.breakpointStackframeForeground: $FG_MUTED
+  debugIcon.startForeground: '#8fc7b0'
+  debugIcon.pauseForeground: '#84acdc'
+  debugIcon.stopForeground: '#f080a0'
+  debugIcon.disconnectForeground: '#f080a0'
+  debugIcon.restartForeground: '#8fc7b0'
+  debugIcon.stepOverForeground: '#84acdc'
+  debugIcon.stepIntoForeground: '#84acdc'
+  debugIcon.stepOutForeground: '#84acdc'
+  debugIcon.continueForeground: '#8fc7b0'
+  debugIcon.stepBackForeground: '#84acdc'
+  debugConsole.infoForeground: '#84acdc'
+  debugConsole.warningForeground: '#e0b478'
+  debugConsole.errorForeground: '#f080a0'
+  debugConsole.sourceForeground: $FG_MUTED
+  debugConsoleInputIcon.foreground: '#f080a0'
+  debugView.stateLabelForeground: '#f0f0f8'
+  debugView.stateLabelBackground: $SURFACE_RAISED
+  debugView.valueChangedHighlight: '#f080a040'
+  debugTokenExpression.name: $ACCENT_FUNCTION
+  debugTokenExpression.value: $ACCENT_STRING
+  debugTokenExpression.string: $ACCENT_STRING
+  debugTokenExpression.boolean: '#e0b478'
+  debugTokenExpression.number: '#e0b478'
+  debugTokenExpression.error: '#f080a0'
+  editor.stackFrameHighlightBackground: '#d4a25926'
+  editor.focusedStackFrameHighlightBackground: '#74b39a26'
+  testing.iconFailed: '#f080a0'
+  testing.iconErrored: '#f4a0b8'
+  testing.iconPassed: '#8fc7b0'
+  testing.iconQueued: $FG_MUTED
+  testing.iconUnset: $FG_DISABLED
+  testing.iconSkipped: $FG_DISABLED
+  testing.runAction: '#8fc7b0'
+  testing.message.error.badgeBackground: !alpha [$ACCENT, '33']
+  testing.message.error.badgeForeground: $ACCENT
+  testing.message.error.badgeBorder: !alpha [$ACCENT, '4d']
+  testing.message.info.decorationForeground: '#6090c8'
+  testing.peekBorder: '#f080a0'
+  testing.peekHeaderBackground: $SURFACE_PANEL
+  notebook.editorBackground: $SURFACE
+  notebook.cellEditorBackground: $SURFACE_CHROME
+  notebook.cellBorderColor: $BORDER
+  notebook.focusedCellBorder: '#f080a0'
+  notebook.inactiveFocusedCellBorder: $FG_DISABLED
+  notebook.selectedCellBorder: $FG_DISABLED
+  notebook.focusedCellBackground: '#ffffff05'
+  notebook.selectedCellBackground: $SURFACE_RAISED
+  notebook.cellHoverBackground: '#ffffff05'
+  notebook.cellToolbarSeparator: $BORDER
+  notebook.cellStatusBarItemHoverBackground: $SURFACE_HOVER
+  notebook.outputContainerBackgroundColor: $SURFACE_CHROME
+  notebook.outputContainerBorderColor: $BORDER
+  notebook.symbolHighlightBackground: '#f080a01f'
+  notebookStatusSuccessIcon.foreground: '#8fc7b0'
+  notebookStatusErrorIcon.foreground: '#f080a0'
+  notebookStatusRunningIcon.foreground: '#84acdc'
+  notebookScrollbarSlider.background: '#30385099'
+  notebookScrollbarSlider.hoverBackground: '#3a4460cc'
+  notebookScrollbarSlider.activeBackground: '#4a5470e6'
+  charts.foreground: '#a5b1cc'
+  charts.lines: $BORDER
+  charts.red: '#f080a0'
+  charts.blue: '#84acdc'
+  charts.yellow: '#e0b478'
+  charts.orange: '#d4a259'
+  charts.green: '#8fc7b0'
+  charts.purple: '#c98ba0'
+  ports.iconRunningProcessForeground: '#8fc7b0'
+  welcomePage.background: $SURFACE
+  welcomePage.tileBackground: $SURFACE_PANEL
+  welcomePage.tileHoverBackground: $SURFACE_HOVER
+  welcomePage.tileBorder: $BORDER
+  welcomePage.progress.background: $SURFACE_RAISED
+  welcomePage.progress.foreground: '#f080a0'
+  walkThrough.embeddedEditorBackground: $SURFACE_CHROME
+  textLink.foreground: '#f4a0b8'
+  textLink.activeForeground: '#f8c0d0'
+  textPreformat.foreground: $ACCENT_STRING
+  textPreformat.background: $SURFACE_RAISED
+  textBlockQuote.background: $SURFACE_PANEL
+  textBlockQuote.border: '#f080a0'
+  textCodeBlock.background: $SURFACE_CHROME
+  textSeparator.foreground: $BORDER
+  settings.headerForeground: '#f0f0f8'
+  settings.headerBorder: $BORDER
+  settings.modifiedItemIndicator: '#f080a0'
+  settings.focusedRowBackground: '#ffffff05'
+  settings.focusedRowBorder: '#f080a040'
+  settings.rowHoverBackground: '#ffffff05'
+  settings.dropdownBackground: '#0e0e14'
+  settings.dropdownForeground: '#f0f0f8'
+  settings.dropdownBorder: $BORDER
+  settings.dropdownListBorder: $BORDER
+  settings.checkboxBackground: '#0e0e14'
+  settings.checkboxForeground: '#f080a0'
+  settings.checkboxBorder: $FG_DISABLED
+  settings.textInputBackground: '#0e0e14'
+  settings.textInputForeground: '#f0f0f8'
+  settings.textInputBorder: $BORDER
+  settings.numberInputBackground: '#0e0e14'
+  settings.numberInputForeground: '#e0b478'
+  settings.numberInputBorder: $BORDER
+  settings.sashBorder: $BORDER
+  extensionButton.prominentBackground: '#f080a0'
+  extensionButton.prominentForeground: '#14141c'
+  extensionButton.prominentHoverBackground: '#f4a0b8'
+  extensionButton.background: '#f080a0'
+  extensionButton.foreground: '#14141c'
+  extensionButton.hoverBackground: '#f4a0b8'
+  extensionButton.separator: '#14141c40'
+  extensionBadge.remoteBackground: '#f080a0'
+  extensionBadge.remoteForeground: '#14141c'
+  extensionIcon.starForeground: '#e0b478'
+  extensionIcon.verifiedForeground: '#8fc7b0'
+  extensionIcon.preReleaseForeground: '#c98ba0'
+  extensionIcon.sponsorForeground: '#f4a0b8'
+  symbolIcon.arrayForeground: '#a5b1cc'
+  symbolIcon.booleanForeground: '#e0b478'
+  symbolIcon.classForeground: $ACCENT_TYPE
+  symbolIcon.colorForeground: '#f080a0'
+  symbolIcon.constantForeground: '#e0b478'
+  symbolIcon.constructorForeground: $ACCENT_FUNCTION
+  symbolIcon.enumeratorForeground: $ACCENT_TYPE
+  symbolIcon.enumeratorMemberForeground: '#e0b478'
+  symbolIcon.eventForeground: '#e0b478'
+  symbolIcon.fieldForeground: $FG_VARIABLE
+  symbolIcon.fileForeground: '#a5b1cc'
+  symbolIcon.folderForeground: '#a5b1cc'
+  symbolIcon.functionForeground: $ACCENT_FUNCTION
+  symbolIcon.interfaceForeground: $ACCENT_TYPE
+  symbolIcon.keyForeground: $ACCENT
+  symbolIcon.keywordForeground: $ACCENT
+  symbolIcon.methodForeground: $ACCENT_FUNCTION
+  symbolIcon.moduleForeground: $ACCENT_TYPE
+  symbolIcon.namespaceForeground: $ACCENT_TYPE
+  symbolIcon.nullForeground: '#e0b478'
+  symbolIcon.numberForeground: '#e0b478'
+  symbolIcon.objectForeground: $FG_VARIABLE
+  symbolIcon.operatorForeground: $FG_OPERATOR_ICON
+  symbolIcon.propertyForeground: $ACCENT_FUNCTION
+  symbolIcon.referenceForeground: $FG_VARIABLE
+  symbolIcon.snippetForeground: '#8fc7b0'
+  symbolIcon.stringForeground: $ACCENT_STRING
+  symbolIcon.structForeground: $ACCENT_TYPE
+  symbolIcon.textForeground: '#a5b1cc'
+  symbolIcon.typeParameterForeground: $ACCENT_TYPE
+  symbolIcon.unitForeground: '#e0b478'
+  symbolIcon.variableForeground: $FG_VARIABLE
+  searchEditor.textInputBorder: $BORDER
+  searchEditor.findMatchBackground: '#f080a033'
+  searchEditor.findMatchBorder: '#b8506e'
+  search.resultsInfoForeground: $FG_MUTED
+  editor.snippetTabstopHighlightBackground: '#f080a01f'
+  editor.snippetTabstopHighlightBorder: '#00000000'
+  editor.snippetFinalTabstopHighlightBackground: '#74b39a1f'
+  editor.snippetFinalTabstopHighlightBorder: '#8fc7b0'
+  editorCommentsWidget.resolvedBorder: $FG_DISABLED
+  editorCommentsWidget.unresolvedBorder: '#f080a0'
+  editorCommentsWidget.rangeBackground: '#f080a014'
+  editorCommentsWidget.replyInputBackground: $SURFACE_CHROME
+  commentsView.resolvedIcon: $FG_DISABLED
+  commentsView.unresolvedIcon: '#f080a0'
+  chat.requestBackground: $SURFACE_PANEL
+  chat.requestBorder: $BORDER
+  chat.slashCommandForeground: '#f080a0'
+  chat.slashCommandBackground: '#f080a01f'
+  chat.avatarBackground: $SURFACE_RAISED
+  chat.avatarForeground: '#f0f0f8'
+  inlineChat.background: $SURFACE_PANEL
+  inlineChat.border: $BORDER
+  inlineChat.shadow: '#08080e99'
+  inlineChatInput.background: '#0e0e14'
+  inlineChatInput.border: $BORDER
+  inlineChatInput.focusBorder: '#f080a0'
+  inlineChatInput.placeholderForeground: $FG_MUTED
+  inlineChatDiff.inserted: '#74b39a1f'
+  inlineChatDiff.removed: '#f080a01f'
+  multiDiffEditor.headerBackground: $SURFACE_CHROME
+  multiDiffEditor.border: $BORDER
+  multiDiffEditor.background: $SURFACE
+  profileBadge.background: $SURFACE_HOVER
+  profileBadge.foreground: '#c6cee0'
+
+tokenColors:
+  - name: "Comment"
+    scope:
+      - comment
+      - punctuation.definition.comment
+    settings:
+      foreground: $TOK_COMMENT
+      fontStyle: 'italic'
+  - name: "Keyword"
+    scope:
+      - keyword
+      - keyword.control
+      - storage
+      - storage.type
+      - storage.modifier
+      - keyword.other
+    settings:
+      foreground: $ACCENT
+  - name: "Operator"
+    scope:
+      - keyword.operator
+      - keyword.operator.assignment
+      - keyword.operator.arithmetic
+      - keyword.operator.logical
+    settings:
+      foreground: $FG_OPERATOR_ICON
+  - name: "String"
+    scope:
+      - string
+      - string.quoted
+      - string.template
+      - punctuation.definition.string
+    settings:
+      foreground: $ACCENT_STRING
+  - name: "String interpolation"
+    scope:
+      - punctuation.definition.template-expression
+      - meta.template.expression
+    settings:
+      foreground: $ACCENT
+  - name: "Regex"
+    scope:
+      - string.regexp
+      - constant.character.escape
+    settings:
+      foreground: '#e0b478'
+  - name: "Number / constant"
+    scope:
+      - constant.numeric
+      - constant.language
+      - constant.language.boolean
+      - constant.language.null
+      - constant.other
+    settings:
+      foreground: '#e0b478'
+  - name: "Function"
+    scope:
+      - entity.name.function
+      - support.function
+      - meta.function-call
+      - meta.function-call.generic
+      - variable.function
+    settings:
+      foreground: $ACCENT_FUNCTION
+  - name: "Function declaration"
+    scope:
+      - entity.name.function.member
+      - meta.definition.method entity.name.function
+    settings:
+      foreground: $ACCENT_FUNCTION
+  - name: "Type / class"
+    scope:
+      - entity.name.type
+      - entity.name.class
+      - entity.name.namespace
+      - entity.other.inherited-class
+      - support.type
+      - support.class
+      - entity.name.type.interface
+    settings:
+      foreground: $ACCENT_TYPE
+  - name: "Type parameter"
+    scope:
+      - entity.name.type.parameter
+      - support.type.primitive
+    settings:
+      foreground: $ACCENT_TYPE
+      fontStyle: 'italic'
+  - name: "Variable"
+    scope:
+      - variable
+      - variable.other
+      - variable.other.readwrite
+      - meta.definition.variable
+    settings:
+      foreground: $FG_VARIABLE
+  - name: "Parameter"
+    scope:
+      - variable.parameter
+      - meta.parameter
+    settings:
+      foreground: $FG_VARIABLE
+      fontStyle: 'italic'
+  - name: "Property"
+    scope:
+      - variable.other.property
+      - support.type.property-name
+      - meta.object-literal.key
+      - variable.other.object.property
+    settings:
+      foreground: $ACCENT_FUNCTION
+  - name: "This / self"
+    scope:
+      - variable.language
+      - variable.language.this
+      - variable.language.self
+    settings:
+      foreground: $ACCENT
+      fontStyle: 'italic'
+  - name: "Constant variable"
+    scope:
+      - variable.other.constant
+      - entity.name.constant
+    settings:
+      foreground: '#e0b478'
+  - name: "Punctuation"
+    scope:
+      - punctuation
+      - meta.brace
+      - punctuation.separator
+      - punctuation.terminator
+      - punctuation.accessor
+    settings:
+      foreground: $FG_MUTED
+  - name: "Decorator"
+    scope:
+      - meta.decorator
+      - entity.name.function.decorator
+      - punctuation.decorator
+    settings:
+      foreground: $ACCENT_TYPE
+  - name: "HTML / JSX tag"
+    scope:
+      - entity.name.tag
+      - support.class.component
+    settings:
+      foreground: $ACCENT
+  - name: "Attribute"
+    scope:
+      - entity.other.attribute-name
+      - entity.other.attribute-name.html
+    settings:
+      foreground: $ACCENT_TYPE
+      fontStyle: 'italic'
+  - name: "CSS selector"
+    scope:
+      - entity.other.attribute-name.class.css
+      - entity.other.attribute-name.id.css
+      - entity.name.tag.css
+    settings:
+      foreground: $ACCENT
+  - name: "CSS property"
+    scope:
+      - support.type.property-name.css
+      - meta.property-name.css
+    settings:
+      foreground: $ACCENT_FUNCTION
+  - name: "CSS value"
+    scope:
+      - support.constant.property-value.css
+      - constant.numeric.css
+      - keyword.other.unit.css
+    settings:
+      foreground: '#e0b478'
+  - name: "JSON key"
+    scope:
+      - support.type.property-name.json
+    settings:
+      foreground: $ACCENT_FUNCTION
+  - name: "YAML key"
+    scope:
+      - entity.name.tag.yaml
+    settings:
+      foreground: $ACCENT_FUNCTION
+  - name: "Shell built-in"
+    scope:
+      - support.function.builtin.shell
+      - entity.name.function.shell
+    settings:
+      foreground: $ACCENT_FUNCTION
+  - name: "Shell variable"
+    scope:
+      - variable.other.normal.shell
+      - punctuation.definition.variable.shell
+    settings:
+      foreground: $FG_VARIABLE
+  - name: "Markdown heading"
+    scope:
+      - markup.heading
+      - entity.name.section.markdown
+      - punctuation.definition.heading.markdown
+    settings:
+      foreground: $ACCENT
+      fontStyle: 'bold'
+  - name: "Markdown bold"
+    scope:
+      - markup.bold
+    settings:
+      foreground: $FG
+      fontStyle: 'bold'
+  - name: "Markdown italic"
+    scope:
+      - markup.italic
+    settings:
+      foreground: $FG
+      fontStyle: 'italic'
+  - name: "Markdown link"
+    scope:
+      - markup.underline.link
+      - string.other.link.title.markdown
+    settings:
+      foreground: '#f4a0b8'
+  - name: "Markdown code"
+    scope:
+      - markup.inline.raw
+      - markup.fenced_code
+      - fenced_code.block.language
+    settings:
+      foreground: $ACCENT_STRING
+  - name: "Markdown quote"
+    scope:
+      - markup.quote
+    settings:
+      foreground: $FG_MUTED
+      fontStyle: 'italic'
+  - name: "Markdown list"
+    scope:
+      - punctuation.definition.list.begin.markdown
+      - beginning.punctuation.definition.list
+    settings:
+      foreground: $ACCENT
+  - name: "Diff inserted"
+    scope:
+      - markup.inserted
+    settings:
+      foreground: '#8fc7b0'
+  - name: "Diff deleted"
+    scope:
+      - markup.deleted
+    settings:
+      foreground: '#f080a0'
+  - name: "Diff changed"
+    scope:
+      - markup.changed
+    settings:
+      foreground: '#e0b478'
+  - name: "Deprecated"
+    scope:
+      - entity.name.function.deprecated
+      - invalid.deprecated
+    settings:
+      foreground: $FG_MUTED
+      fontStyle: 'strikethrough'
+  - name: "Invalid"
+    scope:
+      - invalid
+      - invalid.illegal
+    settings:
+      foreground: '#f4a0b8'
+  - name: "Preprocessor"
+    scope:
+      - meta.preprocessor
+      - keyword.control.directive
+    settings:
+      foreground: $ACCENT_TYPE
+  - name: "Import / from"
+    scope:
+      - keyword.control.import
+      - keyword.control.from
+      - keyword.control.export
+    settings:
+      foreground: $ACCENT
+  - name: "Escape"
+    scope:
+      - constant.character.escape
+      - constant.other.placeholder
+    settings:
+      foreground: '#e0b478'
+
+semanticTokenColors:
+  namespace: $ACCENT_TYPE
+  class: $ACCENT_TYPE
+  interface: $ACCENT_TYPE
+  enum: $ACCENT_TYPE
+  struct: $ACCENT_TYPE
+  typeParameter:
+    foreground: $ACCENT_TYPE
+    fontStyle: 'italic'
+  type: $ACCENT_TYPE
+  function: $ACCENT_FUNCTION
+  method: $ACCENT_FUNCTION
+  property: $ACCENT_FUNCTION
+  parameter:
+    foreground: $FG_VARIABLE
+    fontStyle: 'italic'
+  variable: $FG_VARIABLE
+  variable.readonly: '#e0b478'
+  enumMember: '#e0b478'
+  keyword: $ACCENT
+  operator: $FG_OPERATOR_ICON
+  string: $ACCENT_STRING
+  number: '#e0b478'
+  comment:
+    foreground: $TOK_COMMENT
+    fontStyle: 'italic'
+  decorator: $ACCENT_TYPE
+  event: '#e0b478'
+  label: $FG_MUTED
+  macro: $ACCENT_TYPE
+  "*.declaration":
+    fontStyle: ''
+  "*.deprecated":
+    fontStyle: 'strikethrough'
+  "*.abstract":
+    fontStyle: 'italic'

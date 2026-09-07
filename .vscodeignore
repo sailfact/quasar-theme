@@ -7,6 +7,6 @@ vsc-extension-quickstart.md
 CLAUDE.md
 src/**
 scripts/**
-images/**
-!images/icon.png
+assets/**
+!assets/icon.png
 *.vsix

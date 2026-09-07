@@ -2,27 +2,30 @@ const fs = require("fs");
 const path = require("path");
 const generate = require("./generate");
 
-const THEME_DIR = path.join(__dirname, "..", "theme");
-
-if (!fs.existsSync(THEME_DIR)) {
-  fs.mkdirSync(THEME_DIR);
-}
+const THEME_DIR = path.join(__dirname, "..", "themes");
 
 module.exports = async () => {
-  const { base, soft } = await generate();
+  const variants = await generate();
 
-  return Promise.all([
-    fs.promises.writeFile(
-      path.join(THEME_DIR, "quasar.json"),
-      JSON.stringify(base, null, 4),
+  if (!fs.existsSync(THEME_DIR)) {
+    fs.mkdirSync(THEME_DIR, { recursive: true });
+  }
+
+  return Promise.all(
+    variants.map(({ file, theme }) =>
+      fs.promises
+        .writeFile(
+          path.join(THEME_DIR, file),
+          JSON.stringify(theme, null, 4) + "\n",
+        )
+        .then(() => console.log(`themes/${file}`)),
     ),
-    fs.promises.writeFile(
-      path.join(THEME_DIR, "quasar-soft.json"),
-      JSON.stringify(soft, null, 4),
-    ),
-  ]);
+  );
 };
 
 if (require.main === module) {
-  module.exports();
+  module.exports().catch((error) => {
+    console.error(error.message);
+    process.exit(1);
+  });
 }

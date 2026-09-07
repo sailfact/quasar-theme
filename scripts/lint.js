@@ -43,16 +43,22 @@ async function scrapeThemeAvailableKeys() {
 
 (async () => {
   const availableKeys = await scrapeThemeAvailableKeys();
-  const { base } = await generate();
+  const variants = await generate();
 
-  for (const key of Object.keys(base.colors)) {
+  // Variants may legitimately omit keys from one another, so lint against the
+  // union: a key supported by any variant counts as covered.
+  const themeKeys = new Set(
+    variants.flatMap(({ theme }) => Object.keys(theme.colors)),
+  );
+
+  for (const key of themeKeys) {
     if (!availableKeys.includes(key)) {
       console.warn(`Unsupported key "${key}", probably deprecated?`);
     }
   }
 
   for (const key of availableKeys) {
-    if (!Object.keys(base.colors).includes(key)) {
+    if (!themeKeys.has(key)) {
       console.warn(`Missing key "${key}" in theme`);
     }
   }

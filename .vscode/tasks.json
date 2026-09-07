@@ -1,0 +1,18 @@
+// Explicit task definition so `preLaunchTask` in launch.json does not depend on
+// npm script auto-detection. themes/ is generated and gitignored, so this must
+// run before F5 or the dev host has no theme files to load.
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "npm: build",
+			"type": "npm",
+			"script": "build",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "silent",
+				"panel": "shared"
+			}
+		}
+	]
+}
