@@ -31,6 +31,31 @@ palettes:
     FG_VARIABLE: '#d8dcea'
     FG_OPERATOR_ICON: '#a5b1cc'
     TOK_COMMENT: '#6a789c'
+    TRANSPARENT: '#00000000'
+    FG_BRIGHT: '#f0f0f8'
+    FG_MAX: '#f8f8f8'
+    FG_SUBTLE: '#c6cee0'
+    FG_ON_ACCENT: '#14141c'
+    SURFACE_DEEPEST: '#0e0e14'
+    SURFACE_SLIDER: '#3a4460'
+    SHADOW: '#08080e'
+    ACCENT_BRIGHT: '#f4a0b8'
+    ACCENT_LIGHT: '#f8c0d0'
+    ACCENT_DEEP: '#b8506e'
+    ACCENT_YELLOW: '#e0b478'
+    ACCENT_GREEN: '#8fc7b0'
+    ACCENT_BLUE: '#84acdc'
+    ACCENT_CYAN: '#8cc5cc'
+    WARNING: '#d4a259'
+    GIT_ADDED: '#74b39a'
+    GIT_MODIFIED: '#6090c8'
+    ANSI_MAGENTA: '#a86d7e'
+    ANSI_CYAN: '#6aa8b0'
+    BG_ERROR: '#2a1520'
+    BG_WARNING: '#2a2216'
+    BG_INFO: '#151f2a'
+    OVERLAY_LIGHT: '#ffffff'
+    OVERLAY_DARK: '#000000'
 
 variants:
   - id: quasar
@@ -38,135 +63,135 @@ variants:
     file: quasar-color-theme.json
 
 colors:
-  foreground: '#a5b1cc'
-  errorForeground: '#f080a0'
+  foreground: $FG_OPERATOR_ICON
+  errorForeground: $ACCENT
   descriptionForeground: $FG_MUTED
   disabledForeground: $FG_DISABLED
-  focusBorder: '#f080a0'
+  focusBorder: $ACCENT
   widget.border: $BORDER
-  widget.shadow: '#08080e99'
+  widget.shadow: !alpha [$SHADOW, '99']
   selection.background: $SELECTION
-  icon.foreground: '#a5b1cc'
-  sash.hoverBorder: '#f080a0'
+  icon.foreground: $FG_OPERATOR_ICON
+  sash.hoverBorder: $ACCENT
   toolbar.hoverBackground: $SURFACE_HOVER
   toolbar.activeBackground: $ACTIVE_BORDER
   titleBar.activeBackground: $SURFACE_CHROME
-  titleBar.activeForeground: '#a5b1cc'
+  titleBar.activeForeground: $FG_OPERATOR_ICON
   titleBar.inactiveBackground: $SURFACE_CHROME
   titleBar.inactiveForeground: $FG_MUTED
   titleBar.border: $BORDER
   window.activeBorder: $BORDER
   window.inactiveBorder: $BORDER
-  menubar.selectionForeground: '#f0f0f8'
+  menubar.selectionForeground: $FG_BRIGHT
   menubar.selectionBackground: $SURFACE_HOVER
   menubar.selectionBorder: $ACTIVE_BORDER
   menu.background: $SURFACE_PANEL
-  menu.foreground: '#a5b1cc'
+  menu.foreground: $FG_OPERATOR_ICON
   menu.border: $BORDER
-  menu.selectionForeground: '#f0f0f8'
-  menu.selectionBackground: '#f080a029'
-  menu.selectionBorder: '#f080a0'
+  menu.selectionForeground: $FG_BRIGHT
+  menu.selectionBackground: !alpha [$ACCENT, '29']
+  menu.selectionBorder: $ACCENT
   menu.separatorBackground: $BORDER
   quickInput.background: $SURFACE_PANEL
-  quickInput.foreground: '#a5b1cc'
+  quickInput.foreground: $FG_OPERATOR_ICON
   quickInputTitle.background: $SURFACE_CHROME
-  quickInputList.focusBackground: '#f080a029'
-  quickInputList.focusForeground: '#f0f0f8'
-  quickInputList.focusIconForeground: '#f080a0'
+  quickInputList.focusBackground: !alpha [$ACCENT, '29']
+  quickInputList.focusForeground: $FG_BRIGHT
+  quickInputList.focusIconForeground: $ACCENT
   pickerGroup.foreground: $FG_MUTED
   pickerGroup.border: $BORDER
   keybindingLabel.background: $SURFACE_RAISED
-  keybindingLabel.foreground: '#c6cee0'
+  keybindingLabel.foreground: $FG_SUBTLE
   keybindingLabel.border: $BORDER
   keybindingLabel.bottomBorder: $FG_DISABLED
   keybindingTable.headerBackground: $SURFACE_RAISED
   keybindingTable.rowsBackground: $SURFACE_PANEL
   commandCenter.background: $SURFACE_RAISED
-  commandCenter.foreground: '#a5b1cc'
+  commandCenter.foreground: $FG_OPERATOR_ICON
   commandCenter.border: $BORDER
   commandCenter.activeBackground: $SURFACE_HOVER
-  commandCenter.activeForeground: '#f0f0f8'
-  commandCenter.activeBorder: '#f080a0'
+  commandCenter.activeForeground: $FG_BRIGHT
+  commandCenter.activeBorder: $ACCENT
   commandCenter.inactiveForeground: $FG_MUTED
   commandCenter.inactiveBorder: $BORDER
   activityBar.background: $SURFACE_CHROME
-  activityBar.foreground: '#f0f0f8'
+  activityBar.foreground: $FG_BRIGHT
   activityBar.inactiveForeground: $FG_MUTED
-  activityBar.border: '#00000000'
-  activityBar.activeBorder: '#f080a0'
+  activityBar.border: $TRANSPARENT
+  activityBar.activeBorder: $ACCENT
   activityBar.activeBackground: $ACTIVITY_BAR_ACTIVE_BG
-  activityBar.activeFocusBorder: '#f080a0'
-  activityBarBadge.background: '#f080a0'
-  activityBarBadge.foreground: '#14141c'
-  activityBarTop.foreground: '#f0f0f8'
+  activityBar.activeFocusBorder: $ACCENT
+  activityBarBadge.background: $ACCENT
+  activityBarBadge.foreground: $FG_ON_ACCENT
+  activityBarTop.foreground: $FG_BRIGHT
   activityBarTop.inactiveForeground: $FG_MUTED
-  activityBarTop.activeBorder: '#f080a0'
+  activityBarTop.activeBorder: $ACCENT
   sideBar.background: $SURFACE_PANEL
-  sideBar.foreground: '#a5b1cc'
+  sideBar.foreground: $FG_OPERATOR_ICON
   sideBar.border: $BORDER
-  sideBar.dropBackground: '#f080a01f'
+  sideBar.dropBackground: !alpha [$ACCENT, '1f']
   sideBarTitle.foreground: $FG_MUTED
   sideBarTitle.background: $SURFACE_PANEL
   sideBarSectionHeader.background: $SURFACE_PANEL
   sideBarSectionHeader.foreground: $FG_MUTED
   sideBarSectionHeader.border: $BORDER
   sideBarActivityBarTop.border: $BORDER
-  list.activeSelectionBackground: '#f080a029'
-  list.activeSelectionForeground: '#f0f0f8'
-  list.activeSelectionIconForeground: '#f080a0'
+  list.activeSelectionBackground: !alpha [$ACCENT, '29']
+  list.activeSelectionForeground: $FG_BRIGHT
+  list.activeSelectionIconForeground: $ACCENT
   list.inactiveSelectionBackground: $SURFACE_RAISED
-  list.inactiveSelectionForeground: '#c6cee0'
+  list.inactiveSelectionForeground: $FG_SUBTLE
   list.hoverBackground: $SURFACE_HOVER
-  list.hoverForeground: '#f0f0f8'
-  list.focusBackground: '#f080a01f'
-  list.focusForeground: '#f0f0f8'
-  list.focusOutline: '#f080a0'
+  list.hoverForeground: $FG_BRIGHT
+  list.focusBackground: !alpha [$ACCENT, '1f']
+  list.focusForeground: $FG_BRIGHT
+  list.focusOutline: $ACCENT
   list.inactiveFocusBackground: $SURFACE_RAISED
   list.inactiveFocusOutline: $BORDER
-  list.dropBackground: '#f080a01f'
-  list.highlightForeground: '#f080a0'
-  list.focusHighlightForeground: '#f4a0b8'
-  list.errorForeground: '#f080a0'
-  list.warningForeground: '#d4a259'
+  list.dropBackground: !alpha [$ACCENT, '1f']
+  list.highlightForeground: $ACCENT
+  list.focusHighlightForeground: $ACCENT_BRIGHT
+  list.errorForeground: $ACCENT
+  list.warningForeground: $WARNING
   list.invalidItemForeground: $FG_DISABLED
-  list.filterMatchBackground: '#f080a033'
-  list.filterMatchBorder: '#b8506e'
+  list.filterMatchBackground: !alpha [$ACCENT, '33']
+  list.filterMatchBorder: $ACCENT_DEEP
   listFilterWidget.background: $SURFACE_RAISED
-  listFilterWidget.outline: '#f080a0'
-  listFilterWidget.noMatchesOutline: '#b8506e'
-  listFilterWidget.shadow: '#08080e99'
+  listFilterWidget.outline: $ACCENT
+  listFilterWidget.noMatchesOutline: $ACCENT_DEEP
+  listFilterWidget.shadow: !alpha [$SHADOW, '99']
   tree.indentGuidesStroke: $BORDER
   tree.inactiveIndentGuidesStroke: $BORDER
   tree.tableColumnsBorder: $BORDER
-  tree.tableOddRowsBackground: '#ffffff05'
+  tree.tableOddRowsBackground: !alpha [$OVERLAY_LIGHT, '05']
   editor.background: $SURFACE
   editor.foreground: $FG
   editorLineNumber.foreground: $FG_DISABLED
   editorLineNumber.activeForeground: $FG_MUTED
   editorLineNumber.dimmedForeground: $FG_DISABLED
   editorCursor.foreground: $ACCENT
-  editorCursor.background: '#0e0e14'
+  editorCursor.background: $SURFACE_DEEPEST
   editor.selectionBackground: $SELECTION
-  editor.selectionForeground: '#f8f8f8'
+  editor.selectionForeground: $FG_MAX
   editor.inactiveSelectionBackground: $SELECTION_SUBTLE
   editor.selectionHighlightBackground: $SELECTION_SUBTLE
-  editor.selectionHighlightBorder: '#00000000'
-  editor.wordHighlightBackground: '#8090b026'
-  editor.wordHighlightBorder: '#00000000'
-  editor.wordHighlightStrongBackground: '#8090b03d'
-  editor.wordHighlightStrongBorder: '#00000000'
-  editor.wordHighlightTextBackground: '#8090b026'
-  editor.wordHighlightTextBorder: '#00000000'
-  editor.findMatchBackground: '#f080a04d'
-  editor.findMatchBorder: '#f080a0'
-  editor.findMatchHighlightBackground: '#f080a026'
-  editor.findMatchHighlightBorder: '#00000000'
-  editor.findRangeHighlightBackground: '#8090b01a'
-  editor.hoverHighlightBackground: '#8090b021'
-  editor.lineHighlightBackground: '#ffffff08'
-  editor.lineHighlightBorder: '#00000000'
-  editor.rangeHighlightBackground: '#8090b01a'
-  editor.symbolHighlightBackground: '#f080a026'
+  editor.selectionHighlightBorder: $TRANSPARENT
+  editor.wordHighlightBackground: !alpha [$FG_MUTED, '26']
+  editor.wordHighlightBorder: $TRANSPARENT
+  editor.wordHighlightStrongBackground: !alpha [$FG_MUTED, '3d']
+  editor.wordHighlightStrongBorder: $TRANSPARENT
+  editor.wordHighlightTextBackground: !alpha [$FG_MUTED, '26']
+  editor.wordHighlightTextBorder: $TRANSPARENT
+  editor.findMatchBackground: !alpha [$ACCENT, '4d']
+  editor.findMatchBorder: $ACCENT
+  editor.findMatchHighlightBackground: !alpha [$ACCENT, '26']
+  editor.findMatchHighlightBorder: $TRANSPARENT
+  editor.findRangeHighlightBackground: !alpha [$FG_MUTED, '1a']
+  editor.hoverHighlightBackground: !alpha [$FG_MUTED, '21']
+  editor.lineHighlightBackground: !alpha [$OVERLAY_LIGHT, '08']
+  editor.lineHighlightBorder: $TRANSPARENT
+  editor.rangeHighlightBackground: !alpha [$FG_MUTED, '1a']
+  editor.symbolHighlightBackground: !alpha [$ACCENT, '26']
   editorWhitespace.foreground: $BORDER
   editorIndentGuide.background1: $BORDER
   editorIndentGuide.activeBackground1: $FG_DISABLED
@@ -178,453 +203,453 @@ colors:
   editorInlayHint.parameterForeground: $FG_MUTED
   editorRuler.foreground: $BORDER
   editorCodeLens.foreground: $FG_MUTED
-  editorBracketMatch.background: '#f080a01f'
-  editorBracketMatch.border: '#b8506e'
-  editorBracketHighlight.foreground1: '#f080a0'
-  editorBracketHighlight.foreground2: '#84acdc'
-  editorBracketHighlight.foreground3: '#8fc7b0'
-  editorBracketHighlight.foreground4: '#e0b478'
-  editorBracketHighlight.foreground5: '#c98ba0'
-  editorBracketHighlight.foreground6: '#8cc5cc'
-  editorBracketHighlight.unexpectedBracket.foreground: '#f4a0b8'
-  editorBracketPairGuide.background1: '#f080a04d'
-  editorBracketPairGuide.activeBackground1: '#f080a0'
-  editorLink.activeForeground: '#f4a0b8'
-  editorUnnecessaryCode.opacity: '#00000080'
-  editorUnnecessaryCode.border: '#00000000'
-  editorLightBulb.foreground: '#e0b478'
-  editorLightBulbAutoFix.foreground: '#8fc7b0'
-  editorError.foreground: '#f080a0'
-  editorError.border: '#00000000'
-  editorWarning.foreground: '#d4a259'
-  editorWarning.border: '#00000000'
-  editorInfo.foreground: '#6a789c'
-  editorInfo.border: '#00000000'
+  editorBracketMatch.background: !alpha [$ACCENT, '1f']
+  editorBracketMatch.border: $ACCENT_DEEP
+  editorBracketHighlight.foreground1: $ACCENT
+  editorBracketHighlight.foreground2: $ACCENT_BLUE
+  editorBracketHighlight.foreground3: $ACCENT_GREEN
+  editorBracketHighlight.foreground4: $ACCENT_YELLOW
+  editorBracketHighlight.foreground5: $ACCENT_TYPE
+  editorBracketHighlight.foreground6: $ACCENT_CYAN
+  editorBracketHighlight.unexpectedBracket.foreground: $ACCENT_BRIGHT
+  editorBracketPairGuide.background1: !alpha [$ACCENT, '4d']
+  editorBracketPairGuide.activeBackground1: $ACCENT
+  editorLink.activeForeground: $ACCENT_BRIGHT
+  editorUnnecessaryCode.opacity: !alpha [$OVERLAY_DARK, '80']
+  editorUnnecessaryCode.border: $TRANSPARENT
+  editorLightBulb.foreground: $ACCENT_YELLOW
+  editorLightBulbAutoFix.foreground: $ACCENT_GREEN
+  editorError.foreground: $ACCENT
+  editorError.border: $TRANSPARENT
+  editorWarning.foreground: $WARNING
+  editorWarning.border: $TRANSPARENT
+  editorInfo.foreground: $TOK_COMMENT
+  editorInfo.border: $TRANSPARENT
   editorHint.foreground: $FG_MUTED
-  editorHint.border: '#00000000'
-  problemsErrorIcon.foreground: '#f080a0'
-  problemsWarningIcon.foreground: '#d4a259'
-  problemsInfoIcon.foreground: '#6a789c'
+  editorHint.border: $TRANSPARENT
+  problemsErrorIcon.foreground: $ACCENT
+  problemsWarningIcon.foreground: $WARNING
+  problemsInfoIcon.foreground: $TOK_COMMENT
   editorGutter.background: $SURFACE
-  editorGutter.modifiedBackground: '#6090c8'
-  editorGutter.addedBackground: '#74b39a'
-  editorGutter.deletedBackground: '#f080a0'
+  editorGutter.modifiedBackground: $GIT_MODIFIED
+  editorGutter.addedBackground: $GIT_ADDED
+  editorGutter.deletedBackground: $ACCENT
   editorGutter.commentRangeForeground: $FG_DISABLED
   editorGutter.foldingControlForeground: $FG_MUTED
   editorOverviewRuler.background: $SURFACE
   editorOverviewRuler.border: $BORDER
-  editorOverviewRuler.findMatchForeground: '#f080a099'
-  editorOverviewRuler.selectionHighlightForeground: '#8090b066'
-  editorOverviewRuler.wordHighlightForeground: '#8090b066'
-  editorOverviewRuler.modifiedForeground: '#6090c8'
-  editorOverviewRuler.addedForeground: '#74b39a'
-  editorOverviewRuler.deletedForeground: '#f080a0'
-  editorOverviewRuler.errorForeground: '#f080a0'
-  editorOverviewRuler.warningForeground: '#d4a259'
-  editorOverviewRuler.infoForeground: '#6a789c'
-  editorOverviewRuler.bracketMatchForeground: '#b8506e'
+  editorOverviewRuler.findMatchForeground: !alpha [$ACCENT, '99']
+  editorOverviewRuler.selectionHighlightForeground: !alpha [$FG_MUTED, '66']
+  editorOverviewRuler.wordHighlightForeground: !alpha [$FG_MUTED, '66']
+  editorOverviewRuler.modifiedForeground: $GIT_MODIFIED
+  editorOverviewRuler.addedForeground: $GIT_ADDED
+  editorOverviewRuler.deletedForeground: $ACCENT
+  editorOverviewRuler.errorForeground: $ACCENT
+  editorOverviewRuler.warningForeground: $WARNING
+  editorOverviewRuler.infoForeground: $TOK_COMMENT
+  editorOverviewRuler.bracketMatchForeground: $ACCENT_DEEP
   editorWidget.background: $SURFACE_PANEL
-  editorWidget.foreground: '#a5b1cc'
+  editorWidget.foreground: $FG_OPERATOR_ICON
   editorWidget.border: $BORDER
-  editorWidget.resizeBorder: '#f080a0'
+  editorWidget.resizeBorder: $ACCENT
   editorSuggestWidget.background: $SURFACE_PANEL
   editorSuggestWidget.border: $BORDER
-  editorSuggestWidget.foreground: '#a5b1cc'
-  editorSuggestWidget.focusHighlightForeground: '#f4a0b8'
-  editorSuggestWidget.highlightForeground: '#f080a0'
-  editorSuggestWidget.selectedBackground: '#f080a029'
-  editorSuggestWidget.selectedForeground: '#f0f0f8'
-  editorSuggestWidget.selectedIconForeground: '#f080a0'
+  editorSuggestWidget.foreground: $FG_OPERATOR_ICON
+  editorSuggestWidget.focusHighlightForeground: $ACCENT_BRIGHT
+  editorSuggestWidget.highlightForeground: $ACCENT
+  editorSuggestWidget.selectedBackground: !alpha [$ACCENT, '29']
+  editorSuggestWidget.selectedForeground: $FG_BRIGHT
+  editorSuggestWidget.selectedIconForeground: $ACCENT
   editorSuggestWidgetStatus.foreground: $FG_MUTED
   editorHoverWidget.background: $SURFACE_PANEL
-  editorHoverWidget.foreground: '#a5b1cc'
+  editorHoverWidget.foreground: $FG_OPERATOR_ICON
   editorHoverWidget.border: $BORDER
-  editorHoverWidget.highlightForeground: '#f080a0'
+  editorHoverWidget.highlightForeground: $ACCENT
   editorHoverWidget.statusBarBackground: $SURFACE_CHROME
   editorGhostText.foreground: $FG_DISABLED
-  editorGhostText.border: '#00000000'
+  editorGhostText.border: $TRANSPARENT
   editorStickyScroll.background: $SURFACE_PANEL
   editorStickyScrollHover.background: $SURFACE_HOVER
   editorMarkerNavigation.background: $SURFACE_PANEL
-  editorMarkerNavigationError.background: '#f080a0'
-  editorMarkerNavigationWarning.background: '#d4a259'
-  editorMarkerNavigationInfo.background: '#6a789c'
-  peekView.border: '#f080a0'
+  editorMarkerNavigationError.background: $ACCENT
+  editorMarkerNavigationWarning.background: $WARNING
+  editorMarkerNavigationInfo.background: $TOK_COMMENT
+  peekView.border: $ACCENT
   peekViewEditor.background: $SURFACE_CHROME
-  peekViewEditor.matchHighlightBackground: '#f080a03d'
+  peekViewEditor.matchHighlightBackground: !alpha [$ACCENT, '3d']
   peekViewEditorGutter.background: $SURFACE_CHROME
   peekViewResult.background: $SURFACE_PANEL
-  peekViewResult.fileForeground: '#f0f0f8'
-  peekViewResult.lineForeground: '#a5b1cc'
-  peekViewResult.matchHighlightBackground: '#f080a03d'
-  peekViewResult.selectionBackground: '#f080a029'
-  peekViewResult.selectionForeground: '#f0f0f8'
+  peekViewResult.fileForeground: $FG_BRIGHT
+  peekViewResult.lineForeground: $FG_OPERATOR_ICON
+  peekViewResult.matchHighlightBackground: !alpha [$ACCENT, '3d']
+  peekViewResult.selectionBackground: !alpha [$ACCENT, '29']
+  peekViewResult.selectionForeground: $FG_BRIGHT
   peekViewTitle.background: $SURFACE_CHROME
-  peekViewTitleLabel.foreground: '#f0f0f8'
+  peekViewTitleLabel.foreground: $FG_BRIGHT
   peekViewTitleDescription.foreground: $FG_MUTED
   editorGroup.border: $BORDER
-  editorGroup.dropBackground: '#f080a01f'
+  editorGroup.dropBackground: !alpha [$ACCENT, '1f']
   editorGroup.emptyBackground: $SURFACE
-  editorGroup.focusedEmptyBorder: '#f080a0'
+  editorGroup.focusedEmptyBorder: $ACCENT
   editorGroupHeader.tabsBackground: $SURFACE_PANEL
   editorGroupHeader.tabsBorder: $BORDER
   editorGroupHeader.noTabsBackground: $SURFACE_PANEL
   editorGroupHeader.border: $BORDER
   editorPane.background: $SURFACE
   tab.activeBackground: $SURFACE_TAB_ACTIVE
-  tab.activeForeground: '#f0f0f8'
-  tab.activeBorder: '#f080a0'
-  tab.activeBorderTop: '#f080a0'
+  tab.activeForeground: $FG_BRIGHT
+  tab.activeBorder: $ACCENT
+  tab.activeBorderTop: $ACCENT
   tab.inactiveBackground: $SURFACE_PANEL
   tab.inactiveForeground: $FG_MUTED
   tab.unfocusedActiveBackground: $SURFACE_TAB_ACTIVE
-  tab.unfocusedActiveForeground: '#a5b1cc'
+  tab.unfocusedActiveForeground: $FG_OPERATOR_ICON
   tab.unfocusedActiveBorderTop: $FG_DISABLED
   tab.unfocusedInactiveForeground: $FG_DISABLED
   tab.border: $BORDER
   tab.hoverBackground: $SURFACE_HOVER
-  tab.hoverForeground: '#f0f0f8'
-  tab.hoverBorder: '#f080a0'
+  tab.hoverForeground: $FG_BRIGHT
+  tab.hoverBorder: $ACCENT
   tab.lastPinnedBorder: $FG_DISABLED
-  tab.activeModifiedBorder: '#6090c8'
-  tab.inactiveModifiedBorder: '#6a789c80'
-  tab.dragAndDropBorder: '#f080a0'
+  tab.activeModifiedBorder: $GIT_MODIFIED
+  tab.inactiveModifiedBorder: !alpha [$TOK_COMMENT, '80']
+  tab.dragAndDropBorder: $ACCENT
   breadcrumb.background: $SURFACE
   breadcrumb.foreground: $FG_MUTED
-  breadcrumb.focusForeground: '#f0f0f8'
-  breadcrumb.activeSelectionForeground: '#f080a0'
+  breadcrumb.focusForeground: $FG_BRIGHT
+  breadcrumb.activeSelectionForeground: $ACCENT
   breadcrumbPicker.background: $SURFACE_PANEL
   minimap.background: $SURFACE
-  minimap.foregroundOpacity: '#000000c0'
-  minimap.selectionHighlight: '#f080a066'
-  minimap.findMatchHighlight: '#f080a080'
-  minimap.errorHighlight: '#f080a0'
-  minimap.warningHighlight: '#d4a259'
-  minimap.selectionOccurrenceHighlight: '#8090b066'
-  minimapSlider.background: '#30385059'
-  minimapSlider.hoverBackground: '#3a446080'
-  minimapSlider.activeBackground: '#4a547099'
-  minimapGutter.addedBackground: '#74b39a'
-  minimapGutter.modifiedBackground: '#6a789c'
-  minimapGutter.deletedBackground: '#f080a0'
+  minimap.foregroundOpacity: !alpha [$OVERLAY_DARK, 'c0']
+  minimap.selectionHighlight: !alpha [$ACCENT, '66']
+  minimap.findMatchHighlight: !alpha [$ACCENT, '80']
+  minimap.errorHighlight: $ACCENT
+  minimap.warningHighlight: $WARNING
+  minimap.selectionOccurrenceHighlight: !alpha [$FG_MUTED, '66']
+  minimapSlider.background: !alpha [$BORDER, '59']
+  minimapSlider.hoverBackground: !alpha [$SURFACE_SLIDER, '80']
+  minimapSlider.activeBackground: !alpha [$FG_DISABLED, '99']
+  minimapGutter.addedBackground: $GIT_ADDED
+  minimapGutter.modifiedBackground: $TOK_COMMENT
+  minimapGutter.deletedBackground: $ACCENT
   panel.background: $SURFACE_CHROME
   panel.border: $BORDER
-  panel.dropBorder: '#f080a0'
-  panelTitle.activeForeground: '#f0f0f8'
-  panelTitle.activeBorder: '#f080a0'
+  panel.dropBorder: $ACCENT
+  panelTitle.activeForeground: $FG_BRIGHT
+  panelTitle.activeBorder: $ACCENT
   panelTitle.inactiveForeground: $FG_MUTED
   panelSection.border: $BORDER
-  panelSection.dropBackground: '#f080a01f'
+  panelSection.dropBackground: !alpha [$ACCENT, '1f']
   panelSectionHeader.background: $SURFACE_CHROME
   panelSectionHeader.foreground: $FG_MUTED
   panelSectionHeader.border: $BORDER
   panelInput.border: $BORDER
-  terminal.background: '#1e2436'
-  terminal.foreground: '#e8e8f0'
+  terminal.background: $SURFACE
+  terminal.foreground: $FG
   terminal.border: $BORDER
-  terminal.selectionBackground: '#f080a040'
-  terminal.inactiveSelectionBackground: '#f080a020'
-  terminal.selectionForeground: '#00000000'
-  terminal.hoverHighlightBackground: '#8090b026'
-  terminal.dropBackground: '#f080a01f'
-  terminal.tab.activeBorder: '#f080a0'
-  terminal.findMatchBackground: '#f080a04d'
-  terminal.findMatchBorder: '#f080a0'
-  terminal.findMatchHighlightBackground: '#f080a026'
-  terminal.findMatchHighlightBorder: '#f080a0'
-  terminalCursor.foreground: '#f080a0'
-  terminalCursor.background: '#0e0e14'
-  terminalCommandDecoration.defaultBackground: '#6a789c'
-  terminalCommandDecoration.successBackground: '#74b39a'
-  terminalCommandDecoration.errorBackground: '#f080a0'
-  terminalOverviewRuler.cursorForeground: '#f080a0'
-  terminalOverviewRuler.findMatchForeground: '#f080a099'
-  terminalStickyScroll.background: '#14141c'
-  terminalStickyScrollHover.background: '#1e2436'
-  terminal.ansiBlack: '#0e0e14'
-  terminal.ansiBrightBlack: '#3a4460'
-  terminal.ansiRed: '#f080a0'
-  terminal.ansiBrightRed: '#f4a0b8'
-  terminal.ansiGreen: '#74b39a'
-  terminal.ansiBrightGreen: '#8fc7b0'
-  terminal.ansiYellow: '#d4a259'
-  terminal.ansiBrightYellow: '#e0b478'
-  terminal.ansiBlue: '#6090c8'
-  terminal.ansiBrightBlue: '#84acdc'
-  terminal.ansiMagenta: '#a86d7e'
-  terminal.ansiBrightMagenta: '#c98ba0'
-  terminal.ansiCyan: '#6aa8b0'
-  terminal.ansiBrightCyan: '#8cc5cc'
-  terminal.ansiWhite: '#c6cee0'
-  terminal.ansiBrightWhite: '#f8f8f8'
+  terminal.selectionBackground: !alpha [$ACCENT, '40']
+  terminal.inactiveSelectionBackground: !alpha [$ACCENT, '20']
+  terminal.selectionForeground: $TRANSPARENT
+  terminal.hoverHighlightBackground: !alpha [$FG_MUTED, '26']
+  terminal.dropBackground: !alpha [$ACCENT, '1f']
+  terminal.tab.activeBorder: $ACCENT
+  terminal.findMatchBackground: !alpha [$ACCENT, '4d']
+  terminal.findMatchBorder: $ACCENT
+  terminal.findMatchHighlightBackground: !alpha [$ACCENT, '26']
+  terminal.findMatchHighlightBorder: $ACCENT
+  terminalCursor.foreground: $ACCENT
+  terminalCursor.background: $SURFACE_DEEPEST
+  terminalCommandDecoration.defaultBackground: $TOK_COMMENT
+  terminalCommandDecoration.successBackground: $GIT_ADDED
+  terminalCommandDecoration.errorBackground: $ACCENT
+  terminalOverviewRuler.cursorForeground: $ACCENT
+  terminalOverviewRuler.findMatchForeground: !alpha [$ACCENT, '99']
+  terminalStickyScroll.background: $FG_ON_ACCENT
+  terminalStickyScrollHover.background: $SURFACE
+  terminal.ansiBlack: $SURFACE_DEEPEST
+  terminal.ansiBrightBlack: $SURFACE_SLIDER
+  terminal.ansiRed: $ACCENT
+  terminal.ansiBrightRed: $ACCENT_BRIGHT
+  terminal.ansiGreen: $GIT_ADDED
+  terminal.ansiBrightGreen: $ACCENT_GREEN
+  terminal.ansiYellow: $WARNING
+  terminal.ansiBrightYellow: $ACCENT_YELLOW
+  terminal.ansiBlue: $GIT_MODIFIED
+  terminal.ansiBrightBlue: $ACCENT_BLUE
+  terminal.ansiMagenta: $ANSI_MAGENTA
+  terminal.ansiBrightMagenta: $ACCENT_TYPE
+  terminal.ansiCyan: $ANSI_CYAN
+  terminal.ansiBrightCyan: $ACCENT_CYAN
+  terminal.ansiWhite: $FG_SUBTLE
+  terminal.ansiBrightWhite: $FG_MAX
   statusBar.background: $SURFACE_CHROME
-  statusBar.foreground: '#8090b0'
+  statusBar.foreground: $FG_MUTED
   statusBar.border: $BORDER
-  statusBar.debuggingBackground: '#f080a0'
-  statusBar.debuggingForeground: '#14141c'
-  statusBar.debuggingBorder: '#b8506e'
+  statusBar.debuggingBackground: $ACCENT
+  statusBar.debuggingForeground: $FG_ON_ACCENT
+  statusBar.debuggingBorder: $ACCENT_DEEP
   statusBar.noFolderBackground: $SURFACE_CHROME
   statusBar.noFolderForeground: $FG_MUTED
   statusBar.noFolderBorder: $BORDER
-  statusBar.focusBorder: '#f080a0'
-  statusBarItem.activeBackground: '#f080a033'
+  statusBar.focusBorder: $ACCENT
+  statusBarItem.activeBackground: !alpha [$ACCENT, '33']
   statusBarItem.hoverBackground: $SURFACE_HOVER
-  statusBarItem.hoverForeground: '#f0f0f8'
-  statusBarItem.focusBorder: '#f080a0'
+  statusBarItem.hoverForeground: $FG_BRIGHT
+  statusBarItem.focusBorder: $ACCENT
   statusBarItem.prominentBackground: $SURFACE_RAISED
-  statusBarItem.prominentForeground: '#f0f0f8'
+  statusBarItem.prominentForeground: $FG_BRIGHT
   statusBarItem.prominentHoverBackground: $SURFACE_HOVER
-  statusBarItem.remoteBackground: '#f080a0'
-  statusBarItem.remoteForeground: '#14141c'
-  statusBarItem.errorBackground: '#b8506e'
-  statusBarItem.errorForeground: '#f0f0f8'
-  statusBarItem.warningBackground: '#d4a259'
-  statusBarItem.warningForeground: '#14141c'
+  statusBarItem.remoteBackground: $ACCENT
+  statusBarItem.remoteForeground: $FG_ON_ACCENT
+  statusBarItem.errorBackground: $ACCENT_DEEP
+  statusBarItem.errorForeground: $FG_BRIGHT
+  statusBarItem.warningBackground: $WARNING
+  statusBarItem.warningForeground: $FG_ON_ACCENT
   statusBarItem.compactHoverBackground: $SURFACE_HOVER
-  statusBarItem.offlineBackground: '#6a789c'
-  statusBarItem.offlineForeground: '#14141c'
-  input.background: '#0e0e14'
-  input.foreground: '#f0f0f8'
+  statusBarItem.offlineBackground: $TOK_COMMENT
+  statusBarItem.offlineForeground: $FG_ON_ACCENT
+  input.background: $SURFACE_DEEPEST
+  input.foreground: $FG_BRIGHT
   input.border: $BORDER
   input.placeholderForeground: $FG_MUTED
-  inputOption.activeBackground: '#f080a029'
-  inputOption.activeForeground: '#f0f0f8'
-  inputOption.activeBorder: '#f080a0'
+  inputOption.activeBackground: !alpha [$ACCENT, '29']
+  inputOption.activeForeground: $FG_BRIGHT
+  inputOption.activeBorder: $ACCENT
   inputOption.hoverBackground: $SURFACE_HOVER
-  inputValidation.errorBackground: '#2a1520'
-  inputValidation.errorForeground: '#f4a0b8'
-  inputValidation.errorBorder: '#b8506e'
-  inputValidation.warningBackground: '#2a2216'
-  inputValidation.warningForeground: '#e0b478'
-  inputValidation.warningBorder: '#d4a259'
-  inputValidation.infoBackground: '#151f2a'
-  inputValidation.infoForeground: '#84acdc'
-  inputValidation.infoBorder: '#6a789c'
-  dropdown.background: '#0e0e14'
+  inputValidation.errorBackground: $BG_ERROR
+  inputValidation.errorForeground: $ACCENT_BRIGHT
+  inputValidation.errorBorder: $ACCENT_DEEP
+  inputValidation.warningBackground: $BG_WARNING
+  inputValidation.warningForeground: $ACCENT_YELLOW
+  inputValidation.warningBorder: $WARNING
+  inputValidation.infoBackground: $BG_INFO
+  inputValidation.infoForeground: $ACCENT_BLUE
+  inputValidation.infoBorder: $TOK_COMMENT
+  dropdown.background: $SURFACE_DEEPEST
   dropdown.listBackground: $SURFACE_PANEL
-  dropdown.foreground: '#f0f0f8'
+  dropdown.foreground: $FG_BRIGHT
   dropdown.border: $BORDER
-  button.background: '#f080a0'
-  button.foreground: '#14141c'
-  button.hoverBackground: '#f4a0b8'
-  button.border: '#f080a0'
-  button.separator: '#14141c40'
+  button.background: $ACCENT
+  button.foreground: $FG_ON_ACCENT
+  button.hoverBackground: $ACCENT_BRIGHT
+  button.border: $ACCENT
+  button.separator: !alpha [$FG_ON_ACCENT, '40']
   button.secondaryBackground: $SURFACE_RAISED
-  button.secondaryForeground: '#f0f0f8'
+  button.secondaryForeground: $FG_BRIGHT
   button.secondaryHoverBackground: $SURFACE_HOVER
-  checkbox.background: '#0e0e14'
-  checkbox.foreground: '#f080a0'
+  checkbox.background: $SURFACE_DEEPEST
+  checkbox.foreground: $ACCENT
   checkbox.border: $FG_DISABLED
-  checkbox.selectBackground: '#f080a0'
-  checkbox.selectBorder: '#f080a0'
-  radio.activeBackground: '#f080a029'
-  radio.activeForeground: '#f0f0f8'
-  radio.activeBorder: '#f080a0'
+  checkbox.selectBackground: $ACCENT
+  checkbox.selectBorder: $ACCENT
+  radio.activeBackground: !alpha [$ACCENT, '29']
+  radio.activeForeground: $FG_BRIGHT
+  radio.activeBorder: $ACCENT
   radio.inactiveBorder: $FG_DISABLED
   radio.inactiveHoverBackground: $SURFACE_HOVER
   badge.background: $SURFACE_HOVER
-  badge.foreground: '#c6cee0'
-  progressBar.background: '#f080a0'
-  scrollbar.shadow: '#08080e80'
-  scrollbarSlider.background: '#30385099'
-  scrollbarSlider.hoverBackground: '#3a4460cc'
-  scrollbarSlider.activeBackground: '#4a5470e6'
+  badge.foreground: $FG_SUBTLE
+  progressBar.background: $ACCENT
+  scrollbar.shadow: !alpha [$SHADOW, '80']
+  scrollbarSlider.background: !alpha [$BORDER, '99']
+  scrollbarSlider.hoverBackground: !alpha [$SURFACE_SLIDER, 'cc']
+  scrollbarSlider.activeBackground: !alpha [$FG_DISABLED, 'e6']
   notificationCenter.border: $BORDER
   notificationCenterHeader.background: $SURFACE_CHROME
   notificationCenterHeader.foreground: $FG_MUTED
   notificationToast.border: $BORDER
   notifications.background: $SURFACE_PANEL
-  notifications.foreground: '#a5b1cc'
+  notifications.foreground: $FG_OPERATOR_ICON
   notifications.border: $BORDER
-  notificationLink.foreground: '#f4a0b8'
-  notificationsErrorIcon.foreground: '#f080a0'
-  notificationsWarningIcon.foreground: '#d4a259'
-  notificationsInfoIcon.foreground: '#6a789c'
+  notificationLink.foreground: $ACCENT_BRIGHT
+  notificationsErrorIcon.foreground: $ACCENT
+  notificationsWarningIcon.foreground: $WARNING
+  notificationsInfoIcon.foreground: $TOK_COMMENT
   banner.background: $SURFACE_RAISED
-  banner.foreground: '#f0f0f8'
-  banner.iconForeground: '#f080a0'
-  gitDecoration.addedResourceForeground: '#8fc7b0'
-  gitDecoration.modifiedResourceForeground: '#6090c8'
-  gitDecoration.deletedResourceForeground: '#f080a0'
-  gitDecoration.renamedResourceForeground: '#8cc5cc'
-  gitDecoration.untrackedResourceForeground: '#8fc7b0'
+  banner.foreground: $FG_BRIGHT
+  banner.iconForeground: $ACCENT
+  gitDecoration.addedResourceForeground: $ACCENT_GREEN
+  gitDecoration.modifiedResourceForeground: $GIT_MODIFIED
+  gitDecoration.deletedResourceForeground: $ACCENT
+  gitDecoration.renamedResourceForeground: $ACCENT_CYAN
+  gitDecoration.untrackedResourceForeground: $ACCENT_GREEN
   gitDecoration.ignoredResourceForeground: $FG_DISABLED
-  gitDecoration.stageModifiedResourceForeground: '#6090c8'
-  gitDecoration.stageDeletedResourceForeground: '#b8506e'
-  gitDecoration.conflictingResourceForeground: '#f4a0b8'
-  gitDecoration.submoduleResourceForeground: '#c98ba0'
-  scmGraph.historyItemHoverLabelForeground: '#14141c'
-  scmGraph.foreground1: '#f080a0'
-  scmGraph.foreground2: '#84acdc'
-  scmGraph.foreground3: '#8fc7b0'
-  scmGraph.foreground4: '#e0b478'
-  scmGraph.foreground5: '#c98ba0'
-  diffEditor.insertedTextBackground: '#74b39a26'
-  diffEditor.insertedLineBackground: '#74b39a1a'
-  diffEditor.removedTextBackground: '#f080a026'
-  diffEditor.removedLineBackground: '#f080a01a'
-  diffEditor.insertedTextBorder: '#00000000'
-  diffEditor.removedTextBorder: '#00000000'
+  gitDecoration.stageModifiedResourceForeground: $GIT_MODIFIED
+  gitDecoration.stageDeletedResourceForeground: $ACCENT_DEEP
+  gitDecoration.conflictingResourceForeground: $ACCENT_BRIGHT
+  gitDecoration.submoduleResourceForeground: $ACCENT_TYPE
+  scmGraph.historyItemHoverLabelForeground: $FG_ON_ACCENT
+  scmGraph.foreground1: $ACCENT
+  scmGraph.foreground2: $ACCENT_BLUE
+  scmGraph.foreground3: $ACCENT_GREEN
+  scmGraph.foreground4: $ACCENT_YELLOW
+  scmGraph.foreground5: $ACCENT_TYPE
+  diffEditor.insertedTextBackground: !alpha [$GIT_ADDED, '26']
+  diffEditor.insertedLineBackground: !alpha [$GIT_ADDED, '1a']
+  diffEditor.removedTextBackground: !alpha [$ACCENT, '26']
+  diffEditor.removedLineBackground: !alpha [$ACCENT, '1a']
+  diffEditor.insertedTextBorder: $TRANSPARENT
+  diffEditor.removedTextBorder: $TRANSPARENT
   diffEditor.border: $BORDER
   diffEditor.diagonalFill: $BORDER
   diffEditor.unchangedRegionBackground: $SURFACE_PANEL
   diffEditor.unchangedRegionForeground: $FG_MUTED
-  diffEditor.unchangedCodeBackground: '#ffffff05'
-  diffEditorGutter.insertedLineBackground: '#74b39a26'
-  diffEditorGutter.removedLineBackground: '#f080a026'
-  diffEditorOverview.insertedForeground: '#74b39a99'
-  diffEditorOverview.removedForeground: '#f080a099'
-  merge.currentHeaderBackground: '#f080a040'
-  merge.currentContentBackground: '#f080a01f'
-  merge.incomingHeaderBackground: '#6090c840'
-  merge.incomingContentBackground: '#6090c81f'
-  merge.commonHeaderBackground: '#6a789c40'
-  merge.commonContentBackground: '#6a789c1f'
+  diffEditor.unchangedCodeBackground: !alpha [$OVERLAY_LIGHT, '05']
+  diffEditorGutter.insertedLineBackground: !alpha [$GIT_ADDED, '26']
+  diffEditorGutter.removedLineBackground: !alpha [$ACCENT, '26']
+  diffEditorOverview.insertedForeground: !alpha [$GIT_ADDED, '99']
+  diffEditorOverview.removedForeground: !alpha [$ACCENT, '99']
+  merge.currentHeaderBackground: !alpha [$ACCENT, '40']
+  merge.currentContentBackground: !alpha [$ACCENT, '1f']
+  merge.incomingHeaderBackground: !alpha [$GIT_MODIFIED, '40']
+  merge.incomingContentBackground: !alpha [$GIT_MODIFIED, '1f']
+  merge.commonHeaderBackground: !alpha [$TOK_COMMENT, '40']
+  merge.commonContentBackground: !alpha [$TOK_COMMENT, '1f']
   merge.border: $BORDER
-  mergeEditor.change.background: '#74b39a1f'
-  mergeEditor.change.word.background: '#74b39a33'
-  mergeEditor.conflict.unhandledUnfocused.border: '#d4a259'
-  mergeEditor.conflict.unhandledFocused.border: '#e0b478'
-  mergeEditor.conflict.handledUnfocused.border: '#74b39a'
-  mergeEditor.conflict.handledFocused.border: '#8fc7b0'
-  editorOverviewRuler.currentContentForeground: '#f080a0'
-  editorOverviewRuler.incomingContentForeground: '#74b39a'
-  editorOverviewRuler.commonContentForeground: '#6a789c'
+  mergeEditor.change.background: !alpha [$GIT_ADDED, '1f']
+  mergeEditor.change.word.background: !alpha [$GIT_ADDED, '33']
+  mergeEditor.conflict.unhandledUnfocused.border: $WARNING
+  mergeEditor.conflict.unhandledFocused.border: $ACCENT_YELLOW
+  mergeEditor.conflict.handledUnfocused.border: $GIT_ADDED
+  mergeEditor.conflict.handledFocused.border: $ACCENT_GREEN
+  editorOverviewRuler.currentContentForeground: $ACCENT
+  editorOverviewRuler.incomingContentForeground: $GIT_ADDED
+  editorOverviewRuler.commonContentForeground: $TOK_COMMENT
   debugToolBar.background: $SURFACE_PANEL
   debugToolBar.border: $BORDER
-  debugIcon.breakpointForeground: '#f080a0'
-  debugIcon.breakpointDisabledForeground: '#b8506e80'
+  debugIcon.breakpointForeground: $ACCENT
+  debugIcon.breakpointDisabledForeground: !alpha [$ACCENT_DEEP, '80']
   debugIcon.breakpointUnverifiedForeground: $FG_DISABLED
-  debugIcon.breakpointCurrentStackframeForeground: '#e0b478'
+  debugIcon.breakpointCurrentStackframeForeground: $ACCENT_YELLOW
   debugIcon.breakpointStackframeForeground: $FG_MUTED
-  debugIcon.startForeground: '#8fc7b0'
-  debugIcon.pauseForeground: '#84acdc'
-  debugIcon.stopForeground: '#f080a0'
-  debugIcon.disconnectForeground: '#f080a0'
-  debugIcon.restartForeground: '#8fc7b0'
-  debugIcon.stepOverForeground: '#84acdc'
-  debugIcon.stepIntoForeground: '#84acdc'
-  debugIcon.stepOutForeground: '#84acdc'
-  debugIcon.continueForeground: '#8fc7b0'
-  debugIcon.stepBackForeground: '#84acdc'
-  debugConsole.infoForeground: '#84acdc'
-  debugConsole.warningForeground: '#e0b478'
-  debugConsole.errorForeground: '#f080a0'
+  debugIcon.startForeground: $ACCENT_GREEN
+  debugIcon.pauseForeground: $ACCENT_BLUE
+  debugIcon.stopForeground: $ACCENT
+  debugIcon.disconnectForeground: $ACCENT
+  debugIcon.restartForeground: $ACCENT_GREEN
+  debugIcon.stepOverForeground: $ACCENT_BLUE
+  debugIcon.stepIntoForeground: $ACCENT_BLUE
+  debugIcon.stepOutForeground: $ACCENT_BLUE
+  debugIcon.continueForeground: $ACCENT_GREEN
+  debugIcon.stepBackForeground: $ACCENT_BLUE
+  debugConsole.infoForeground: $ACCENT_BLUE
+  debugConsole.warningForeground: $ACCENT_YELLOW
+  debugConsole.errorForeground: $ACCENT
   debugConsole.sourceForeground: $FG_MUTED
-  debugConsoleInputIcon.foreground: '#f080a0'
-  debugView.stateLabelForeground: '#f0f0f8'
+  debugConsoleInputIcon.foreground: $ACCENT
+  debugView.stateLabelForeground: $FG_BRIGHT
   debugView.stateLabelBackground: $SURFACE_RAISED
-  debugView.valueChangedHighlight: '#f080a040'
+  debugView.valueChangedHighlight: !alpha [$ACCENT, '40']
   debugTokenExpression.name: $ACCENT_FUNCTION
   debugTokenExpression.value: $ACCENT_STRING
   debugTokenExpression.string: $ACCENT_STRING
-  debugTokenExpression.boolean: '#e0b478'
-  debugTokenExpression.number: '#e0b478'
-  debugTokenExpression.error: '#f080a0'
-  editor.stackFrameHighlightBackground: '#6090c826'
-  editor.focusedStackFrameHighlightBackground: '#74b39a26'
-  testing.iconFailed: '#f080a0'
-  testing.iconErrored: '#f4a0b8'
-  testing.iconPassed: '#8fc7b0'
+  debugTokenExpression.boolean: $ACCENT_YELLOW
+  debugTokenExpression.number: $ACCENT_YELLOW
+  debugTokenExpression.error: $ACCENT
+  editor.stackFrameHighlightBackground: !alpha [$GIT_MODIFIED, '26']
+  editor.focusedStackFrameHighlightBackground: !alpha [$GIT_ADDED, '26']
+  testing.iconFailed: $ACCENT
+  testing.iconErrored: $ACCENT_BRIGHT
+  testing.iconPassed: $ACCENT_GREEN
   testing.iconQueued: $FG_MUTED
   testing.iconUnset: $FG_DISABLED
   testing.iconSkipped: $FG_DISABLED
-  testing.runAction: '#8fc7b0'
+  testing.runAction: $ACCENT_GREEN
   testing.message.error.badgeBackground: !alpha [$ACCENT, '33']
   testing.message.error.badgeForeground: $ACCENT
   testing.message.error.badgeBorder: !alpha [$ACCENT, '4d']
-  testing.message.info.decorationForeground: '#6a789c'
-  testing.peekBorder: '#f080a0'
+  testing.message.info.decorationForeground: $TOK_COMMENT
+  testing.peekBorder: $ACCENT
   testing.peekHeaderBackground: $SURFACE_PANEL
   notebook.editorBackground: $SURFACE
   notebook.cellEditorBackground: $SURFACE_CHROME
   notebook.cellBorderColor: $BORDER
-  notebook.focusedCellBorder: '#f080a0'
+  notebook.focusedCellBorder: $ACCENT
   notebook.inactiveFocusedCellBorder: $FG_DISABLED
   notebook.selectedCellBorder: $FG_DISABLED
-  notebook.focusedCellBackground: '#ffffff05'
+  notebook.focusedCellBackground: !alpha [$OVERLAY_LIGHT, '05']
   notebook.selectedCellBackground: $SURFACE_RAISED
-  notebook.cellHoverBackground: '#ffffff05'
+  notebook.cellHoverBackground: !alpha [$OVERLAY_LIGHT, '05']
   notebook.cellToolbarSeparator: $BORDER
   notebook.cellStatusBarItemHoverBackground: $SURFACE_HOVER
   notebook.outputContainerBackgroundColor: $SURFACE_CHROME
   notebook.outputContainerBorderColor: $BORDER
-  notebook.symbolHighlightBackground: '#f080a01f'
-  notebookStatusSuccessIcon.foreground: '#8fc7b0'
-  notebookStatusErrorIcon.foreground: '#f080a0'
-  notebookStatusRunningIcon.foreground: '#84acdc'
-  notebookScrollbarSlider.background: '#30385099'
-  notebookScrollbarSlider.hoverBackground: '#3a4460cc'
-  notebookScrollbarSlider.activeBackground: '#4a5470e6'
-  charts.foreground: '#a5b1cc'
+  notebook.symbolHighlightBackground: !alpha [$ACCENT, '1f']
+  notebookStatusSuccessIcon.foreground: $ACCENT_GREEN
+  notebookStatusErrorIcon.foreground: $ACCENT
+  notebookStatusRunningIcon.foreground: $ACCENT_BLUE
+  notebookScrollbarSlider.background: !alpha [$BORDER, '99']
+  notebookScrollbarSlider.hoverBackground: !alpha [$SURFACE_SLIDER, 'cc']
+  notebookScrollbarSlider.activeBackground: !alpha [$FG_DISABLED, 'e6']
+  charts.foreground: $FG_OPERATOR_ICON
   charts.lines: $BORDER
-  charts.red: '#f080a0'
-  charts.blue: '#84acdc'
-  charts.yellow: '#e0b478'
-  charts.orange: '#d4a259'
-  charts.green: '#8fc7b0'
-  charts.purple: '#c98ba0'
-  ports.iconRunningProcessForeground: '#8fc7b0'
+  charts.red: $ACCENT
+  charts.blue: $ACCENT_BLUE
+  charts.yellow: $ACCENT_YELLOW
+  charts.orange: $WARNING
+  charts.green: $ACCENT_GREEN
+  charts.purple: $ACCENT_TYPE
+  ports.iconRunningProcessForeground: $ACCENT_GREEN
   welcomePage.background: $SURFACE
   welcomePage.tileBackground: $SURFACE_PANEL
   welcomePage.tileHoverBackground: $SURFACE_HOVER
   welcomePage.tileBorder: $BORDER
   welcomePage.progress.background: $SURFACE_RAISED
-  welcomePage.progress.foreground: '#f080a0'
+  welcomePage.progress.foreground: $ACCENT
   walkThrough.embeddedEditorBackground: $SURFACE_CHROME
-  textLink.foreground: '#f4a0b8'
-  textLink.activeForeground: '#f8c0d0'
+  textLink.foreground: $ACCENT_BRIGHT
+  textLink.activeForeground: $ACCENT_LIGHT
   textPreformat.foreground: $ACCENT_STRING
   textPreformat.background: $SURFACE_RAISED
   textBlockQuote.background: $SURFACE_PANEL
-  textBlockQuote.border: '#f080a0'
+  textBlockQuote.border: $ACCENT
   textCodeBlock.background: $SURFACE_CHROME
   textSeparator.foreground: $BORDER
-  settings.headerForeground: '#f0f0f8'
+  settings.headerForeground: $FG_BRIGHT
   settings.headerBorder: $BORDER
-  settings.modifiedItemIndicator: '#f080a0'
-  settings.focusedRowBackground: '#ffffff05'
-  settings.focusedRowBorder: '#f080a040'
-  settings.rowHoverBackground: '#ffffff05'
-  settings.dropdownBackground: '#0e0e14'
-  settings.dropdownForeground: '#f0f0f8'
+  settings.modifiedItemIndicator: $ACCENT
+  settings.focusedRowBackground: !alpha [$OVERLAY_LIGHT, '05']
+  settings.focusedRowBorder: !alpha [$ACCENT, '40']
+  settings.rowHoverBackground: !alpha [$OVERLAY_LIGHT, '05']
+  settings.dropdownBackground: $SURFACE_DEEPEST
+  settings.dropdownForeground: $FG_BRIGHT
   settings.dropdownBorder: $BORDER
   settings.dropdownListBorder: $BORDER
-  settings.checkboxBackground: '#0e0e14'
-  settings.checkboxForeground: '#f080a0'
+  settings.checkboxBackground: $SURFACE_DEEPEST
+  settings.checkboxForeground: $ACCENT
   settings.checkboxBorder: $FG_DISABLED
-  settings.textInputBackground: '#0e0e14'
-  settings.textInputForeground: '#f0f0f8'
+  settings.textInputBackground: $SURFACE_DEEPEST
+  settings.textInputForeground: $FG_BRIGHT
   settings.textInputBorder: $BORDER
-  settings.numberInputBackground: '#0e0e14'
-  settings.numberInputForeground: '#e0b478'
+  settings.numberInputBackground: $SURFACE_DEEPEST
+  settings.numberInputForeground: $ACCENT_YELLOW
   settings.numberInputBorder: $BORDER
   settings.sashBorder: $BORDER
-  extensionButton.prominentBackground: '#f080a0'
-  extensionButton.prominentForeground: '#14141c'
-  extensionButton.prominentHoverBackground: '#f4a0b8'
-  extensionButton.background: '#f080a0'
-  extensionButton.foreground: '#14141c'
-  extensionButton.hoverBackground: '#f4a0b8'
-  extensionButton.separator: '#14141c40'
-  extensionBadge.remoteBackground: '#f080a0'
-  extensionBadge.remoteForeground: '#14141c'
-  extensionIcon.starForeground: '#e0b478'
-  extensionIcon.verifiedForeground: '#8fc7b0'
-  extensionIcon.preReleaseForeground: '#c98ba0'
-  extensionIcon.sponsorForeground: '#f4a0b8'
-  symbolIcon.arrayForeground: '#a5b1cc'
-  symbolIcon.booleanForeground: '#e0b478'
+  extensionButton.prominentBackground: $ACCENT
+  extensionButton.prominentForeground: $FG_ON_ACCENT
+  extensionButton.prominentHoverBackground: $ACCENT_BRIGHT
+  extensionButton.background: $ACCENT
+  extensionButton.foreground: $FG_ON_ACCENT
+  extensionButton.hoverBackground: $ACCENT_BRIGHT
+  extensionButton.separator: !alpha [$FG_ON_ACCENT, '40']
+  extensionBadge.remoteBackground: $ACCENT
+  extensionBadge.remoteForeground: $FG_ON_ACCENT
+  extensionIcon.starForeground: $ACCENT_YELLOW
+  extensionIcon.verifiedForeground: $ACCENT_GREEN
+  extensionIcon.preReleaseForeground: $ACCENT_TYPE
+  extensionIcon.sponsorForeground: $ACCENT_BRIGHT
+  symbolIcon.arrayForeground: $FG_OPERATOR_ICON
+  symbolIcon.booleanForeground: $ACCENT_YELLOW
   symbolIcon.classForeground: $ACCENT_TYPE
-  symbolIcon.colorForeground: '#f080a0'
-  symbolIcon.constantForeground: '#e0b478'
+  symbolIcon.colorForeground: $ACCENT
+  symbolIcon.constantForeground: $ACCENT_YELLOW
   symbolIcon.constructorForeground: $ACCENT_FUNCTION
   symbolIcon.enumeratorForeground: $ACCENT_TYPE
-  symbolIcon.enumeratorMemberForeground: '#e0b478'
-  symbolIcon.eventForeground: '#e0b478'
+  symbolIcon.enumeratorMemberForeground: $ACCENT_YELLOW
+  symbolIcon.eventForeground: $ACCENT_YELLOW
   symbolIcon.fieldForeground: $FG_VARIABLE
-  symbolIcon.fileForeground: '#a5b1cc'
-  symbolIcon.folderForeground: '#a5b1cc'
+  symbolIcon.fileForeground: $FG_OPERATOR_ICON
+  symbolIcon.folderForeground: $FG_OPERATOR_ICON
   symbolIcon.functionForeground: $ACCENT_FUNCTION
   symbolIcon.interfaceForeground: $ACCENT_TYPE
   symbolIcon.keyForeground: $ACCENT
@@ -632,53 +657,53 @@ colors:
   symbolIcon.methodForeground: $ACCENT_FUNCTION
   symbolIcon.moduleForeground: $ACCENT_TYPE
   symbolIcon.namespaceForeground: $ACCENT_TYPE
-  symbolIcon.nullForeground: '#e0b478'
-  symbolIcon.numberForeground: '#e0b478'
+  symbolIcon.nullForeground: $ACCENT_YELLOW
+  symbolIcon.numberForeground: $ACCENT_YELLOW
   symbolIcon.objectForeground: $FG_VARIABLE
   symbolIcon.operatorForeground: $FG_OPERATOR_ICON
   symbolIcon.propertyForeground: $ACCENT_FUNCTION
   symbolIcon.referenceForeground: $FG_VARIABLE
-  symbolIcon.snippetForeground: '#8fc7b0'
+  symbolIcon.snippetForeground: $ACCENT_GREEN
   symbolIcon.stringForeground: $ACCENT_STRING
   symbolIcon.structForeground: $ACCENT_TYPE
-  symbolIcon.textForeground: '#a5b1cc'
+  symbolIcon.textForeground: $FG_OPERATOR_ICON
   symbolIcon.typeParameterForeground: $ACCENT_TYPE
-  symbolIcon.unitForeground: '#e0b478'
+  symbolIcon.unitForeground: $ACCENT_YELLOW
   symbolIcon.variableForeground: $FG_VARIABLE
   searchEditor.textInputBorder: $BORDER
-  searchEditor.findMatchBackground: '#f080a033'
-  searchEditor.findMatchBorder: '#b8506e'
+  searchEditor.findMatchBackground: !alpha [$ACCENT, '33']
+  searchEditor.findMatchBorder: $ACCENT_DEEP
   search.resultsInfoForeground: $FG_MUTED
-  editor.snippetTabstopHighlightBackground: '#f080a01f'
-  editor.snippetTabstopHighlightBorder: '#00000000'
-  editor.snippetFinalTabstopHighlightBackground: '#74b39a1f'
-  editor.snippetFinalTabstopHighlightBorder: '#8fc7b0'
+  editor.snippetTabstopHighlightBackground: !alpha [$ACCENT, '1f']
+  editor.snippetTabstopHighlightBorder: $TRANSPARENT
+  editor.snippetFinalTabstopHighlightBackground: !alpha [$GIT_ADDED, '1f']
+  editor.snippetFinalTabstopHighlightBorder: $ACCENT_GREEN
   editorCommentsWidget.resolvedBorder: $FG_DISABLED
-  editorCommentsWidget.unresolvedBorder: '#f080a0'
-  editorCommentsWidget.rangeBackground: '#f080a014'
+  editorCommentsWidget.unresolvedBorder: $ACCENT
+  editorCommentsWidget.rangeBackground: !alpha [$ACCENT, '14']
   editorCommentsWidget.replyInputBackground: $SURFACE_CHROME
   commentsView.resolvedIcon: $FG_DISABLED
-  commentsView.unresolvedIcon: '#f080a0'
+  commentsView.unresolvedIcon: $ACCENT
   chat.requestBackground: $SURFACE_PANEL
   chat.requestBorder: $BORDER
-  chat.slashCommandForeground: '#f080a0'
-  chat.slashCommandBackground: '#f080a01f'
+  chat.slashCommandForeground: $ACCENT
+  chat.slashCommandBackground: !alpha [$ACCENT, '1f']
   chat.avatarBackground: $SURFACE_RAISED
-  chat.avatarForeground: '#f0f0f8'
+  chat.avatarForeground: $FG_BRIGHT
   inlineChat.background: $SURFACE_PANEL
   inlineChat.border: $BORDER
-  inlineChat.shadow: '#08080e99'
-  inlineChatInput.background: '#0e0e14'
+  inlineChat.shadow: !alpha [$SHADOW, '99']
+  inlineChatInput.background: $SURFACE_DEEPEST
   inlineChatInput.border: $BORDER
-  inlineChatInput.focusBorder: '#f080a0'
+  inlineChatInput.focusBorder: $ACCENT
   inlineChatInput.placeholderForeground: $FG_MUTED
-  inlineChatDiff.inserted: '#74b39a1f'
-  inlineChatDiff.removed: '#f080a01f'
+  inlineChatDiff.inserted: !alpha [$GIT_ADDED, '1f']
+  inlineChatDiff.removed: !alpha [$ACCENT, '1f']
   multiDiffEditor.headerBackground: $SURFACE_CHROME
   multiDiffEditor.border: $BORDER
   multiDiffEditor.background: $SURFACE
   profileBadge.background: $SURFACE_HOVER
-  profileBadge.foreground: '#c6cee0'
+  profileBadge.foreground: $FG_SUBTLE
 
 tokenColors:
   - name: "Comment"
@@ -725,7 +750,7 @@ tokenColors:
       - string.regexp
       - constant.character.escape
     settings:
-      foreground: '#e0b478'
+      foreground: $ACCENT_YELLOW
   - name: "Number / constant"
     scope:
       - constant.numeric
@@ -734,7 +759,7 @@ tokenColors:
       - constant.language.null
       - constant.other
     settings:
-      foreground: '#e0b478'
+      foreground: $ACCENT_YELLOW
   - name: "Function"
     scope:
       - entity.name.function
@@ -804,7 +829,7 @@ tokenColors:
       - variable.other.constant
       - entity.name.constant
     settings:
-      foreground: '#e0b478'
+      foreground: $ACCENT_YELLOW
   - name: "Punctuation"
     scope:
       - punctuation
@@ -853,7 +878,7 @@ tokenColors:
       - constant.numeric.css
       - keyword.other.unit.css
     settings:
-      foreground: '#e0b478'
+      foreground: $ACCENT_YELLOW
   - name: "JSON key"
     scope:
       - support.type.property-name.json
@@ -901,7 +926,7 @@ tokenColors:
       - markup.underline.link
       - string.other.link.title.markdown
     settings:
-      foreground: '#f4a0b8'
+      foreground: $ACCENT_BRIGHT
   - name: "Markdown code"
     scope:
       - markup.inline.raw
@@ -925,17 +950,17 @@ tokenColors:
     scope:
       - markup.inserted
     settings:
-      foreground: '#8fc7b0'
+      foreground: $ACCENT_GREEN
   - name: "Diff deleted"
     scope:
       - markup.deleted
     settings:
-      foreground: '#f080a0'
+      foreground: $ACCENT
   - name: "Diff changed"
     scope:
       - markup.changed
     settings:
-      foreground: '#e0b478'
+      foreground: $ACCENT_YELLOW
   - name: "Deprecated"
     scope:
       - entity.name.function.deprecated
@@ -948,7 +973,7 @@ tokenColors:
       - invalid
       - invalid.illegal
     settings:
-      foreground: '#f4a0b8'
+      foreground: $ACCENT_BRIGHT
   - name: "Preprocessor"
     scope:
       - meta.preprocessor
@@ -967,7 +992,7 @@ tokenColors:
       - constant.character.escape
       - constant.other.placeholder
     settings:
-      foreground: '#e0b478'
+      foreground: $ACCENT_YELLOW
 
 semanticTokenColors:
   namespace: $ACCENT_TYPE
@@ -986,17 +1011,17 @@ semanticTokenColors:
     foreground: $FG_VARIABLE
     fontStyle: 'italic'
   variable: $FG_VARIABLE
-  variable.readonly: '#e0b478'
-  enumMember: '#e0b478'
+  variable.readonly: $ACCENT_YELLOW
+  enumMember: $ACCENT_YELLOW
   keyword: $ACCENT
   operator: $FG_OPERATOR_ICON
   string: $ACCENT_STRING
-  number: '#e0b478'
+  number: $ACCENT_YELLOW
   comment:
     foreground: $TOK_COMMENT
     fontStyle: 'italic'
   decorator: $ACCENT_TYPE
-  event: '#e0b478'
+  event: $ACCENT_YELLOW
   label: $FG_MUTED
   macro: $ACCENT_TYPE
   "*.declaration":

@@ -23,8 +23,14 @@ The file is one shared structure plus one palette:
   present: the palette defines all 638 keys.
 - `!alpha [$ACCENT, '1f']` appends a constant alpha suffix.
 
-There are 21 roles over 638 color keys. Adding a color means defining a role in the palette
-and referencing it — not inlining a hex into `colors`.
+There are 46 roles over 638 color keys, and **every** color value in `colors`,
+`tokenColors` and `semanticTokenColors` is a `$ROLE` — there are no literal hexes left
+below the `variants:` line. Hex appears in exactly one place: the palette itself. Adding
+a color means defining a role and referencing it, never inlining a hex.
+
+This is what makes a second palette meaningful. Until it was done, 418 of ~704 bindings
+were literals, so a new palette could only restyle about 40% of the theme and the rest
+came out Quasar pink regardless.
 
 ```bash
 npm run build     # src/quasar.yaml -> themes/*.json
@@ -46,9 +52,10 @@ silently drops keys would otherwise be invisible. Run it after touching `scripts
   This is what makes gitignoring `themes/` safe.
 
 The pipeline descends from the Dracula theme's scripts, but `transformSoft` is gone. The
-`palettes`/`variants` scaffolding is a holdover from when Quasar shipped three variants
-(Quasar, Quasar Dark, Quasar Void); roles are still resolved in JS rather than inlined,
-since a role referenced from dozens of keys is easier to retune from one place.
+`palettes`/`variants` scaffolding dates from when Quasar shipped three variants
+(Quasar, Quasar Dark, Quasar Void). It is exercised by a single variant today, but the
+generator is fully multi-variant: add a palette under `palettes`, an entry under
+`variants`, and a matching entry in `package.json` `contributes.themes`.
 
 ## Running / debugging
 
@@ -77,8 +84,6 @@ should list 6 files.
   that sets them gets HC chrome, i.e. an extra box drawn around focused and active elements
   (panel tabs were the visible symptom). Several other HC-only keys are still set deliberately —
   `editor.findMatchBorder` and the transparent `*.Border` no-ops — but those are local, not global.
-- `minimap.findMatchHighlight` is `#FF550080` — a Dracula orange left over from the original
-  copy. It is currently a shared literal, not a role.
 - `gauge.*` and `inlineChat.regionHighlight` were dropped: VS Code deregistered both, and the
   color-theme schema now rejects them. `testing.message.error.decorationForeground` was likewise
   removed upstream, replaced by `testing.message.error.badge{Background,Foreground,Border}` —
