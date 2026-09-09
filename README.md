@@ -1,8 +1,19 @@
 # Quasar
 
-A dark theme for out of space.
+Three dark themes for out of space, built on one palette.
 
-Select it via `Preferences: Color Theme` → **Quasar**.
+| Variant | Editor bg | Character |
+|---|---|---|
+| **Quasar Dark** | `#14141c` | The default. Navy editor surfaces on ink chrome. |
+| **Quasar Ink** | `#0a0a10` | Higher contrast. Near-black editor, brighter syntax, dimmer comments. |
+| **Quasar Navy** | `#1e2436` | Lower contrast, warmer. Navy throughout — easiest on long sessions. |
+
+Select one via `Preferences: Color Theme` → **Quasar Dark** / **Quasar Ink** /
+**Quasar Navy**.
+
+All three share a single structure: 641 workbench colours, 42 TextMate scopes and 26
+semantic token rules, every one of them bound to a named role. The variants differ only
+in what those roles resolve to.
 
 ## Recommended settings
 
@@ -57,22 +68,26 @@ would change the fonts of people who install Quasar and then use something else.
 
 ## Development
 
-Colours live in [src/quasar.yaml](src/quasar.yaml). The file in `themes/` is generated
+Colours live in [src/quasar.yaml](src/quasar.yaml). Everything in `themes/` is generated
 and gitignored; never edit it directly.
 
 ```bash
 npm install
-npm run build     # src/quasar.yaml -> themes/quasar-color-theme.json
+npm run build     # src/quasar.yaml -> themes/quasar-{dark,ink,navy}-color-theme.json
 npm run verify    # round-trip the generated output against themes/
 npm run lint      # compare against the VS Code theme-color reference
 npm run package   # build + vsce package
 ```
 
-A value written as `$ROLE` in `colors`, `tokenColors` or `semanticTokenColors` resolves
-from `palettes` at the top of the file; a literal `'#rrggbb'` is shared as-is. Change a
-role once and every key bound to it moves together. A `~` value omits the key entirely.
+Every value in `colors`, `tokenColors` and `semanticTokenColors` is a `$ROLE`, resolved
+per variant from the `palettes` block at the top of the file — hex appears nowhere else.
+`!alpha [$ROLE, '1f']` appends a constant alpha suffix; a `~` value omits the key. Change
+a role once and every key bound to it moves together, in all three themes.
 
-Press `F5` to open an Extension Development Host with the theme loaded. To find the
+Adding a fourth variant means adding a palette under `palettes`, an entry under
+`variants`, and a matching entry in `package.json` `contributes.themes`.
+
+Press `F5` to open an Extension Development Host with the themes loaded. To find the
 TextMate scope behind a token, run `Developer: Inspect Editor Tokens and Scopes` there.
 
 ## License

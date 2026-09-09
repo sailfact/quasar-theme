@@ -1,7 +1,7 @@
 {
   "name": "quasar-theme",
   "displayName": "Quasar Theme",
-  "description": "Quasar: A dark theme for out of space.",
+  "description": "Quasar: three dark themes for out of space \u2014 Dark, Ink and Navy.",
   "version": "0.0.1",
   "publisher": "sailfact",
   "license": "MIT",
@@ -20,7 +20,9 @@
     "theme",
     "dark",
     "color-theme",
-    "quasar"
+    "quasar",
+    "rose",
+    "navy"
   ],
   "galleryBanner": {
     "color": "#1e2436",
@@ -41,9 +43,19 @@
   "contributes": {
     "themes": [
       {
-        "label": "Quasar",
+        "label": "Quasar Dark",
         "uiTheme": "vs-dark",
-        "path": "./themes/quasar-color-theme.json"
+        "path": "./themes/quasar-dark-color-theme.json"
+      },
+      {
+        "label": "Quasar Ink",
+        "uiTheme": "vs-dark",
+        "path": "./themes/quasar-ink-color-theme.json"
+      },
+      {
+        "label": "Quasar Navy",
+        "uiTheme": "vs-dark",
+        "path": "./themes/quasar-navy-color-theme.json"
       }
     ]
   }

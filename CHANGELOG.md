@@ -6,4 +6,5 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
-- Initial release
+- Initial release: **Quasar Dark**, **Quasar Ink** and **Quasar Navy**, generated from
+  a single shared structure in `src/quasar.yaml` over three palettes.
