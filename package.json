@@ -33,6 +33,7 @@
     "verify": "node scripts/verify.js",
     "lint": "node scripts/lint.js",
     "vscode:prepublish": "node scripts/build.js",
+    "release": "node scripts/release.js",
     "package": "vsce package",
     "publish": "vsce publish"
   },

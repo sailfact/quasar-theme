@@ -56,6 +56,27 @@ npm run lint      # scrape the VS Code theme-color reference; report unsupported
 `npm run verify` is the safety net. Because `themes/` is gitignored, a generator bug that
 silently drops keys would otherwise be invisible. Run it after touching `scripts/`.
 
+## Releasing
+
+```bash
+npm run release -- patch          # or minor, major, or an explicit 1.2.3
+npm run release -- patch --dry-run
+```
+
+[scripts/release.js](scripts/release.js) is the whole release: it refuses to run off `master`
+or with a dirty tree, refuses a tag that exists, builds and verifies, then bumps the version in
+`package.json` + `package-lock.json`, retitles the CHANGELOG's `## [Unreleased]` section as
+`## [x.y.z] - <date>` (opening a fresh empty one above it), commits as `Release vX.Y.Z` and
+creates an annotated tag.
+
+It **pushes nothing** — commit and tag stay local until you run
+`git push --follow-tags`, then `npm run publish`.
+
+Write the release notes under `## [Unreleased]` *before* releasing; an empty section aborts the
+run unless you pass `--allow-empty`. Note that `verify.js` self-executes and calls
+`process.exit`, so `release.js` spawns it as a child process rather than requiring it — keep
+that in mind if you refactor either.
+
 ## Build pipeline
 
 - [scripts/generate.js](scripts/generate.js) parses the YAML and returns `[{file, theme}]`,
